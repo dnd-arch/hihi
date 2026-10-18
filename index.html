@@ -1,0 +1,950 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#ffc4d8">
+<title>إكرامو يا عمري 🎀</title>
+<style>
+:root{--pink:#ffb9d1;--hot:#ff4f9a;--deep:#b93470;--paper:#fffafc;--ink:#7f3657;--line:#f3b4cb;--cream:#fff5f7}
+*{box-sizing:border-box}
+html{min-height:100%;background:#ffd4e3}
+body{margin:0;min-height:100svh;color:var(--ink);font-family:"Trebuchet MS",Tahoma,Arial,sans-serif;overflow-x:clip;background:
+ radial-gradient(ellipse at 10% 12%,rgba(255,255,255,.87) 0 2%,transparent 18%),
+ radial-gradient(ellipse at 90% 10%,rgba(255,244,249,.8) 0 3%,transparent 18%),
+ radial-gradient(ellipse at 82% 84%,rgba(255,119,173,.25),transparent 24%),
+ radial-gradient(ellipse at 15% 85%,rgba(255,255,255,.6),transparent 26%),
+ linear-gradient(135deg,#ffd2e1 0%,#ffc0d6 38%,#ffe1eb 72%,#ffc7dc 100%);}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.29;z-index:0;background-image:radial-gradient(#d983a6 .7px,transparent .8px),radial-gradient(#fff .7px,transparent .8px);background-size:17px 17px,23px 23px;background-position:0 0,8px 12px}
+.page{position:relative;isolation:isolate;min-height:100svh;padding:42px 20px 48px;display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:visible}
+.glow{position:absolute;width:48vw;height:48vw;max-width:680px;max-height:680px;border-radius:50%;background:rgba(255,255,255,.30);filter:blur(45px);z-index:-1;top:22%;left:26%;pointer-events:none}
+.paper{position:relative;z-index:2;width:min(570px,94vw);padding:32px 98px 31px;background:linear-gradient(130deg,rgba(255,255,255,.97),rgba(255,249,252,.96));border:2px solid rgba(255,255,255,.95);border-radius:8px 20px 9px 18px;box-shadow:0 18px 55px rgba(180,67,113,.17),0 3px 0 #f7c2d4, inset 0 0 0 1px #fce1eb;transform:rotate(-.45deg);}
+.paper:before{content:"";position:absolute;inset:9px;border:1px dashed #f0abc5;border-radius:5px 13px 6px 12px;pointer-events:none}
+.paper:after{content:"";position:absolute;top:-9px;left:50%;width:132px;height:23px;transform:translateX(-50%) rotate(-2deg);background:rgba(255,202,220,.74);border-left:1px solid rgba(255,255,255,.7);border-right:1px solid rgba(255,255,255,.7);box-shadow:0 2px 3px rgba(150,60,90,.05)}
+.corner{position:absolute;z-index:4;width:94px;pointer-events:none;filter:drop-shadow(0 5px 4px rgba(197,64,117,.12));animation:float 5s ease-in-out infinite}
+.corner.tl{top:-31px;right:7px;transform:rotate(13deg)}.corner.br{bottom:-34px;left:7px;transform:rotate(-12deg);animation-delay:-1.3s}
+/* A single decorative bow at the top; message-side stickers are generated along the actual message height. */
+.paper-sticker{position:absolute;z-index:5;width:76px;height:auto;max-height:100px;object-fit:contain;pointer-events:none;user-select:none;-webkit-user-drag:none;filter:drop-shadow(0 5px 5px rgba(156,47,92,.15));animation:float 5.4s ease-in-out infinite}
+.paper-sticker.top-bow{top:-28px;left:17%;width:66px;transform:rotate(-11deg);animation-delay:-2s}
+.message-sticker-layer{position:absolute;inset:0;z-index:5;pointer-events:none;overflow:visible}
+.message-sticker{position:absolute;width:var(--sticker-size,68px);height:auto;max-height:116px;object-fit:contain;user-select:none;-webkit-user-drag:none;filter:drop-shadow(0 4px 4px rgba(156,47,92,.13));animation:float 5.2s ease-in-out infinite}
+.message-sticker.left{left:-3px}
+.message-sticker.right{right:-3px}
+.message-sticker.small{--sticker-size:50px}
+.message-sticker.medium{--sticker-size:66px}
+.message-sticker.large{--sticker-size:78px}
+.message-sticker:nth-child(4n+1){animation-delay:-1.1s}
+.message-sticker:nth-child(4n+2){animation-delay:-2.4s}
+.message-sticker:nth-child(4n+3){animation-delay:-.6s}
+.message-content{position:relative;z-index:6}
+.letter-text{position:relative;z-index:6;margin:25px 0 26px;color:#8d3f61;font-size:clamp(16px,3.8vw,18px);line-height:2.15;text-align:right;direction:rtl;white-space:pre-wrap;overflow-wrap:anywhere;word-break:normal;min-height:46px}
+.letter-text p{margin:0 0 1.15em}
+.letter-text p:last-child{margin-bottom:0}
+.kicker{position:relative;z-index:6;text-align:center;font-size:13px;letter-spacing:2px;color:#d66b96;margin:0 auto 15px;font-weight:800}
+.kicker:before,.kicker:after{content:"✦";display:inline-block;color:#ff78a8;font-size:17px;margin:0 10px;vertical-align:-1px}
+.main-title{position:relative;z-index:6;font-family:Tahoma,Arial,sans-serif;font-size:clamp(30px,6.5vw,47px);line-height:1.45;font-weight:900;text-align:center;margin:20px 0 8px;color:#e84b8a;text-shadow:0 2px 0 #fff,0 5px 0 rgba(255,185,211,.35);}
+.subtitle{position:relative;z-index:6;text-align:center;margin:0 auto;max-width:430px;font-size:clamp(17px,3.9vw,22px);line-height:1.9;font-weight:800;color:#9b3f69}
+.divider{position:relative;z-index:6;display:flex;align-items:center;gap:12px;margin:21px auto 20px;color:#ee7eaa;width:78%;font-size:17px;justify-content:center}
+.divider:before,.divider:after{content:"";height:1px;flex:1;background:linear-gradient(90deg,transparent,#efadc6)}.divider:after{transform:scaleX(-1)}
+.joke{position:relative;z-index:6;margin:0 auto;padding:12px 14px 13px;width:fit-content;max-width:100%;border:1px solid #f3cad8;border-radius:5px 13px 5px 10px;background:#fff1f6;box-shadow:2px 4px 0 rgba(235,143,177,.17);font-size:clamp(13px,3.1vw,16px);line-height:1.8;text-align:center;color:#b44b78;transform:rotate(.7deg)}
+.joke:before{content:"♥";position:absolute;top:-14px;right:-10px;font-size:20px;color:#ff6e9f;text-shadow:0 1px #fff}
+.bottom-hearts{position:relative;z-index:6;display:flex;gap:7px;justify-content:center;margin-top:20px;font-size:20px;letter-spacing:6px;filter:drop-shadow(0 2px 0 #fff)}
+.music-wrap{position:relative;z-index:6;display:flex;flex-direction:column;align-items:center;gap:8px;margin-top:26px}
+.music-btn{appearance:none;border:1px solid rgba(255,255,255,.95);border-radius:999px;padding:12px 20px;display:flex;align-items:center;gap:10px;background:linear-gradient(135deg,#ff79ad,#ee4e8b);color:#fff;font-size:15px;font-weight:800;box-shadow:0 7px 18px rgba(194,57,112,.23),inset 0 1px rgba(255,255,255,.45);cursor:pointer;transition:transform .22s,filter .22s}
+.music-btn:hover{transform:translateY(-2px) scale(1.025);filter:saturate(1.08)}.music-btn:active{transform:scale(.97)}.music-btn:focus-visible{outline:3px solid #fff;outline-offset:4px}
+.music-icon{font-size:19px}.music-hint{min-height:16px;margin:0;font-size:11px;color:#a54d73;opacity:.78;text-align:center}
+.equalizer{display:inline-flex;align-items:center;gap:2px;height:15px}.equalizer i{display:block;width:3px;height:5px;border-radius:9px;background:#fff}.playing .equalizer i{animation:equalize .7s ease-in-out infinite alternate}.playing .equalizer i:nth-child(2){animation-delay:-.35s}.playing .equalizer i:nth-child(3){animation-delay:-.2s}.playing .equalizer i:nth-child(4){animation-delay:-.5s}
+.sticker{position:absolute;z-index:1;user-select:none;-webkit-user-drag:none;pointer-events:none;object-fit:contain;filter:drop-shadow(0 5px 5px rgba(156,47,92,.12));animation:float 6s ease-in-out infinite;transform-origin:center}
+.s1{width:clamp(95px,16vw,185px);top:3%;left:3%;transform:rotate(-13deg);animation-delay:-1.1s}.s2{width:clamp(85px,13vw,155px);top:6%;right:5%;transform:rotate(12deg);animation-delay:-3.4s}.s3{width:clamp(90px,15vw,175px);top:23%;left:1%;transform:rotate(7deg);animation-delay:-2.1s}.s4{width:clamp(90px,14vw,160px);top:28%;right:2%;transform:rotate(-7deg);animation-delay:-4s}.s5{width:clamp(90px,13vw,155px);bottom:21%;left:5%;transform:rotate(-9deg);animation-delay:-2.8s}.s6{width:clamp(90px,14vw,165px);bottom:19%;right:5%;transform:rotate(7deg);animation-delay:-.7s}.s7{width:clamp(105px,17vw,195px);bottom:1%;left:21%;transform:rotate(-7deg);animation-delay:-1.6s}.s8{width:clamp(105px,16vw,180px);bottom:1%;right:22%;transform:rotate(9deg);animation-delay:-3.2s}.s9{width:clamp(70px,10vw,118px);top:1%;left:40%;transform:rotate(6deg);animation-delay:-.5s}.s10{width:clamp(70px,10vw,115px);bottom:39%;left:15%;transform:rotate(-10deg);animation-delay:-2.7s}.s11{width:clamp(65px,9vw,112px);bottom:38%;right:15%;transform:rotate(8deg);animation-delay:-1.9s}.s12{width:clamp(80px,12vw,140px);top:47%;left:1%;transform:rotate(7deg);animation-delay:-.9s}
+.sticker-garden{position:relative;z-index:2;width:min(940px,100%);margin:27px auto 0;display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:5px 7px;padding:15px 10px 20px}
+.sticker-garden img{width:clamp(43px,7vw,82px);height:clamp(52px,9vw,96px);object-fit:contain;filter:drop-shadow(0 3px 3px rgba(159,70,97,.12));animation:tiny-float 4.8s ease-in-out infinite}
+.sticker-garden img:nth-child(5n+1){width:clamp(56px,9vw,100px);height:clamp(60px,10vw,104px)}
+.sticker-garden img:nth-child(7n+3){transform:rotate(-6deg)}
+.sticker-garden img:nth-child(4n+2){transform:rotate(5deg)}
+.sticker-garden img:nth-child(3n){animation-delay:-1.5s}.sticker-garden img:nth-child(2n){animation-delay:-2.4s}
+.sticker-garden img.wide-sticker{width:clamp(72px,12vw,128px);height:clamp(48px,7vw,70px)}
+.sparkle{position:absolute;z-index:1;color:#fff;font-size:clamp(20px,3vw,34px);text-shadow:0 2px 7px #ed81ad;animation:twinkle 2.5s ease-in-out infinite}.sp1{top:17%;left:25%}.sp2{top:38%;right:25%;animation-delay:-1.1s}.sp3{bottom:15%;right:29%;animation-delay:-.7s}.sp4{bottom:34%;left:28%;animation-delay:-1.8s}.sp5{top:52%;right:7%;animation-delay:-.4s}
+.footnote{position:relative;z-index:2;margin:0 auto;color:#a64c73;font-size:11px;opacity:.64;text-align:center;direction:rtl}
+@keyframes float{0%,100%{translate:0 0}50%{translate:0 -9px}}
+@keyframes tiny-float{0%,100%{translate:0 0}50%{translate:0 -4px}}
+@keyframes twinkle{0%,100%{opacity:.38;scale:.8;rotate:-8deg}50%{opacity:1;scale:1.12;rotate:8deg}}
+@keyframes equalize{from{height:4px}to{height:14px}}
+@media(max-width:650px){
+ .page{justify-content:flex-start;padding:112px 10px 22px;min-height:100svh;overflow:visible}
+ .paper{width:min(510px,94vw);padding:27px 70px 25px;margin:48px 0 0;}
+ .paper:after{width:100px;top:-7px;height:19px}
+ .corner{width:76px}.corner.tl{top:-27px;right:5px}.corner.br{bottom:-29px;left:5px}
+ .paper-sticker.top-bow{top:-22px;left:19%;width:54px}
+ .message-sticker.small{--sticker-size:clamp(29px,9vw,36px)}
+ .message-sticker.medium{--sticker-size:clamp(34px,10.5vw,42px)}
+ .message-sticker.large{--sticker-size:clamp(37px,11.5vw,47px)}
+ .message-sticker{max-height:72px}
+ .message-sticker.left{left:5px}
+ .message-sticker.right{right:5px}
+ .letter-text{font-size:16px;line-height:2.08;margin:21px 0 23px}
+ .kicker{font-size:11px;letter-spacing:1px;margin-bottom:11px}.main-title{font-size:clamp(29px,8.3vw,40px)}.subtitle{font-size:clamp(17px,4.4vw,20px)}
+ .divider{margin:15px auto}.joke{padding:10px 11px;font-size:13px}.bottom-hearts{margin-top:14px;font-size:18px}
+ .music-wrap{margin-top:22px}.music-btn{padding:11px 17px;font-size:14px}
+ .s1{width:clamp(54px,20vw,78px);top:5px;left:2px;transform:rotate(-10deg)}.s2{width:clamp(54px,19vw,76px);top:8px;right:2px;transform:rotate(10deg)}.s3{width:clamp(50px,18vw,70px);top:28%;left:2px}.s4{width:clamp(49px,17vw,68px);top:30%;right:2px}.s5{width:clamp(54px,19vw,74px);bottom:9%;left:2px}.s6{width:clamp(49px,17vw,68px);bottom:9%;right:2px}.s7{width:clamp(60px,22vw,88px);bottom:0;left:17%}.s8{width:clamp(58px,21vw,84px);bottom:0;right:17%}.s9{width:clamp(44px,15vw,60px);top:8%;left:40%}.s10{width:clamp(39px,13vw,52px);bottom:31%;left:3px}.s11{width:clamp(40px,14vw,55px);bottom:31%;right:3px}.s12{width:clamp(48px,16vw,64px);top:44%;left:3px}
+ .sparkle.sp1{top:18%;left:8%}.sp2{top:45%;right:6%}.sp3{bottom:18%;right:28%}.sp4{bottom:29%;left:22%}.sp5{display:none}
+ .sticker-garden{margin-top:18px;gap:4px;padding:10px 3px 16px}.sticker-garden img{width:clamp(34px,10vw,44px);height:clamp(42px,12vw,54px)}.sticker-garden img:nth-child(5n+1){width:clamp(43px,12vw,56px);height:clamp(48px,13vw,60px)}.sticker-garden img.wide-sticker{width:clamp(64px,19vw,80px);height:clamp(40px,11vw,48px)}.footnote{font-size:10px}
+}
+@media(max-width:380px){.page{padding-top:95px}.paper{width:94vw;padding:23px 61px 20px}.s1,.s2{width:clamp(47px,17vw,62px)}.s3,.s4{width:clamp(44px,15vw,56px)}.s5,.s6{width:clamp(46px,16vw,59px)}.s7,.s8{width:clamp(52px,19vw,68px)}.s9{width:clamp(40px,14vw,52px)}.s10,.s11{width:37px}.paper-sticker.top-bow{left:16%;width:48px}.message-sticker.small{--sticker-size:clamp(34px,11vw,41px)}.message-sticker.medium{--sticker-size:clamp(38px,12vw,45px)}.message-sticker.large{--sticker-size:clamp(42px,13vw,49px)}.message-sticker.left{left:-1px}.message-sticker.right{right:-1px}.letter-text{font-size:15px;line-height:2.0}.main-title{font-size:28px}.subtitle{font-size:16px}.joke{font-size:12px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition:none!important}}
+/* A little breathing room after the long letter; this is the only music-start control. */
+.album-gate{position:relative;z-index:3;width:min(760px,calc(100% - 24px));margin:22px auto 42px;text-align:center;padding:20px 15px 18px}
+.album-gate:before{content:"✦  ♡  ✦";display:block;color:#f17aaa;font-size:22px;letter-spacing:9px;margin:0 0 12px}
+.album-gate-note{margin:0 auto 15px;color:#a54d73;font-size:14px;line-height:1.8}
+.album-start-button{appearance:none;border:2px solid rgba(255,255,255,.95);border-radius:16px;padding:15px 22px;max-width:100%;background:linear-gradient(135deg,#ff75a9 0%,#f0448a 52%,#e93f83 100%);color:#fff;font-family:Tahoma,Arial,sans-serif;font-size:clamp(15px,4vw,18px);font-weight:900;line-height:1.55;box-shadow:0 8px 0 rgba(190,59,111,.15),0 14px 28px rgba(197,56,111,.20),inset 0 1px rgba(255,255,255,.6);cursor:pointer;touch-action:manipulation;transition:transform .2s,box-shadow .2s}
+.album-start-button:hover{transform:translateY(-2px);box-shadow:0 10px 0 rgba(190,59,111,.12),0 18px 30px rgba(197,56,111,.22)}
+.album-start-button:active{transform:translateY(2px)}
+.album-start-button:focus-visible{outline:3px solid #fff;outline-offset:4px}
+.album-gate-started .album-start-button{background:linear-gradient(135deg,#ec6a9d,#c53f7b)}
+.music-status{min-height:20px;margin:11px auto 0;color:#a54d73;font-size:12px;line-height:1.7}
+.memory-album{position:relative;isolation:isolate;width:min(960px,calc(100% - 20px));margin:0 auto 45px;padding:8px 6px 26px;scroll-margin-top:18px}
+.memory-album[hidden]{display:none!important}
+.album-heading{position:relative;z-index:2;text-align:center;margin:0 auto 30px;padding:20px 16px 18px;width:min(620px,94%);background:rgba(255,250,252,.8);border:1px dashed #eaa0bd;border-radius:12px 5px 13px 6px;box-shadow:0 8px 24px rgba(171,61,106,.10);transform:rotate(-.7deg)}
+.album-heading:before,.album-heading:after{content:"🎀";position:absolute;font-size:clamp(26px,7vw,40px);filter:drop-shadow(0 3px 2px rgba(167,55,96,.13))}
+.album-heading:before{top:-18px;right:-8px;transform:rotate(10deg)}.album-heading:after{bottom:-17px;left:-9px;transform:rotate(-12deg)}
+.album-title{margin:0;color:#e84b8a;font-size:clamp(27px,6.5vw,43px);line-height:1.45;font-weight:900;text-shadow:0 2px #fff}
+.album-subtitle{margin:7px 0 0;color:#9b3f69;font-size:clamp(13px,3.5vw,16px);line-height:1.8}
+.memories-stack{position:relative;display:flex;flex-direction:column;align-items:center;gap:34px;width:100%;padding:6px 0 15px}
+.memory-card{--tilt:-2deg;position:relative;z-index:2;width:min(590px,84%);padding:12px 12px 17px;background:linear-gradient(145deg,#fffefe,#fff8fb);border:1px solid rgba(255,255,255,.98);box-shadow:0 12px 28px rgba(166,61,103,.15),0 2px 0 #f5c5d7,inset 0 0 0 1px #f9e2eb;border-radius:4px 8px 5px 7px;transform:rotate(var(--tilt));transition:transform .25s,box-shadow .25s}
+.memory-card:nth-child(4n+1){--tilt:-2.8deg;width:min(550px,81%)}
+.memory-card:nth-child(4n+2){--tilt:2.2deg;width:min(620px,87%)}
+.memory-card:nth-child(4n+3){--tilt:-1.2deg;width:min(505px,76%)}
+.memory-card:nth-child(4n){--tilt:1.6deg;width:min(570px,83%)}
+.memory-card:hover{transform:rotate(0deg) translateY(-2px);box-shadow:0 16px 33px rgba(166,61,103,.18),0 2px 0 #f5c5d7}
+.memory-card:before{content:"";position:absolute;top:-8px;left:50%;width:104px;height:20px;transform:translateX(-50%) rotate(-2deg);background:rgba(255,190,214,.74);border-left:1px solid rgba(255,255,255,.7);border-right:1px solid rgba(255,255,255,.7);box-shadow:0 2px 3px rgba(143,54,89,.05);z-index:4}
+.memory-photo-frame{position:relative;display:flex;align-items:center;justify-content:center;min-height:170px;width:100%;overflow:hidden;background:linear-gradient(135deg,#ffeaf2,#fff6fa);border:1px solid #f6d7e3}
+.memory-photo,.memory-video{display:block;width:100%;height:auto;max-height:520px;object-fit:contain;background:#fff8fb;color:#b64b79;font-size:13px}.memory-video{min-height:210px}
+.memory-photo.is-placeholder{width:100%;height:auto;min-height:190px;max-height:280px;object-fit:contain}
+.memory-caption{position:relative;z-index:2;margin:15px 3px 0;padding:3px 5px 0;color:#8d3f61;font-family:"Trebuchet MS",Tahoma,Arial,sans-serif;font-size:clamp(15px,3.7vw,18px);font-weight:700;line-height:1.95;text-align:center;white-space:pre-wrap;overflow-wrap:anywhere}
+.memory-caption:before{content:"♡  ✦  ♡";display:block;margin:0 auto 6px;color:#f08ab2;font-size:15px;letter-spacing:4px}
+.memory-sticker{position:absolute;z-index:5;width:clamp(42px,9vw,78px);height:auto;max-height:100px;object-fit:contain;pointer-events:none;filter:drop-shadow(0 4px 4px rgba(156,47,92,.15));animation:tiny-float 4.6s ease-in-out infinite}
+.memory-sticker.top-left{top:-22px;left:-23px;transform:rotate(-10deg)}
+.memory-sticker.top-right{top:22%;right:-27px;transform:rotate(9deg);animation-delay:-1.7s}
+.memory-sticker.bottom-left{bottom:35px;left:-23px;transform:rotate(8deg);animation-delay:-2.1s}
+.memory-sticker.bottom-right{bottom:-22px;right:-19px;transform:rotate(-8deg);animation-delay:-.8s}
+.memory-last-note{position:relative;width:min(560px,92%);margin:38px auto 15px;text-align:center;color:#d84988;font-weight:900;font-size:clamp(22px,5vw,31px);line-height:1.7;text-shadow:0 2px #fff}
+.memory-last-note:before,.memory-last-note:after{content:"✧  💗  ✧";display:block;color:#f087b2;font-size:20px;letter-spacing:5px;margin:8px 0}
+.album-sticker-divider{display:flex;justify-content:center;align-items:center;gap:8px;flex-wrap:wrap;margin:28px auto 5px;max-width:920px}
+.album-sticker-divider img{width:clamp(40px,7vw,74px);height:clamp(44px,8vw,82px);object-fit:contain;filter:drop-shadow(0 3px 4px rgba(159,70,97,.12));animation:tiny-float 4.8s ease-in-out infinite}
+.album-sticker-divider img:nth-child(3n){animation-delay:-1.4s}.album-sticker-divider img:nth-child(2n){animation-delay:-2.1s}
+.photo-howto{font-size:12px;line-height:1.8;color:#b05a7d;text-align:center;max-width:600px;margin:12px auto 0;opacity:.82}
+@media(max-width:650px){
+ .album-gate{width:calc(100% - 10px);margin:14px auto 28px;padding:17px 9px 15px}
+ .album-gate-note{font-size:13px;margin-bottom:12px}
+ .album-start-button{width:min(100%,350px);padding:13px 15px;border-radius:14px}
+ .memory-album{width:calc(100% - 8px);padding:5px 2px 20px;margin-bottom:30px}
+ .album-heading{margin-bottom:28px;padding:18px 13px 15px}
+ .memories-stack{gap:30px;padding:5px 0 10px}
+ .memory-card,.memory-card:nth-child(n){width:min(var(--mobile-card-width,88%), 590px);padding:8px 8px 13px}
+ .memory-card:nth-child(4n+1){--mobile-card-width:83%}.memory-card:nth-child(4n+2){--mobile-card-width:88%}.memory-card:nth-child(4n+3){--mobile-card-width:78%}.memory-card:nth-child(4n){--mobile-card-width:85%}
+ .memory-card:before{width:83px;height:17px;top:-7px}
+ .memory-photo-frame{min-height:135px}
+ .memory-photo,.memory-video{max-height:420px}.memory-video{min-height:175px}
+ .memory-photo.is-placeholder{min-height:158px;max-height:220px}
+ .memory-caption{font-size:15px;line-height:1.9;margin-top:11px}
+ .memory-sticker{width:clamp(33px,10vw,48px);max-height:67px}
+ .memory-sticker.top-left{top:-17px;left:-13px}.memory-sticker.top-right{right:-13px}.memory-sticker.bottom-left{left:-13px;bottom:22px}.memory-sticker.bottom-right{right:-12px;bottom:-16px}
+ .album-sticker-divider{gap:3px;margin-top:20px}.album-sticker-divider img{width:clamp(32px,8.5vw,43px);height:clamp(37px,10vw,50px)}
+}
+@media(max-width:360px){.memory-card:nth-child(n){width:88%}.memory-sticker.top-right,.memory-sticker.bottom-left{display:none}.memory-caption{font-size:14px}}
+
+.record-room{position:relative;isolation:isolate;width:min(960px,calc(100% - 20px));margin:0 auto 58px;padding:8px 6px 32px;scroll-margin-top:18px}
+.record-room[hidden]{display:none!important}
+.record-heading{position:relative;z-index:2;width:min(620px,94%);margin:0 auto 30px;padding:20px 16px 18px;text-align:center;background:rgba(255,250,252,.86);border:1px dashed #eaa0bd;border-radius:8px 13px 6px 12px;box-shadow:0 8px 24px rgba(171,61,106,.10);transform:rotate(.7deg)}
+.record-heading:before,.record-heading:after{content:"🎶";position:absolute;font-size:clamp(25px,7vw,39px);filter:drop-shadow(0 3px 2px rgba(167,55,96,.13))}
+.record-heading:before{top:-19px;left:-8px;transform:rotate(-10deg)}.record-heading:after{bottom:-18px;right:-8px;transform:rotate(11deg)}
+.record-title{margin:0;color:#e84b8a;font-size:clamp(26px,6vw,42px);line-height:1.45;font-weight:900;text-shadow:0 2px #fff}
+.record-subtitle{margin:7px 0 0;color:#9b3f69;font-size:clamp(13px,3.5vw,16px);line-height:1.8}
+.record-list{display:flex;flex-direction:column;gap:22px;width:min(650px,94%);margin:0 auto}
+.record-card{position:relative;padding:20px 16px 18px;background:linear-gradient(145deg,#fffefe,#fff7fb);border:1px solid rgba(255,255,255,.98);border-radius:8px 5px 10px 6px;box-shadow:0 10px 24px rgba(166,61,103,.14),0 2px 0 #f5c5d7,inset 0 0 0 1px #f9e2eb;transform:rotate(-.55deg)}
+.record-card:nth-child(even){transform:rotate(.55deg)}
+.record-card:before{content:"";position:absolute;top:-8px;left:50%;width:92px;height:19px;transform:translateX(-50%) rotate(-2deg);background:rgba(255,190,214,.72);box-shadow:0 2px 3px rgba(143,54,89,.05)}
+.record-number{margin:0 0 5px;text-align:center;color:#e84b8a;font-size:14px;font-weight:900}
+.record-name{margin:0;text-align:center;color:#8d3f61;font-size:clamp(18px,4.5vw,23px);line-height:1.6;font-weight:900}
+.record-description{margin:7px auto 14px;color:#a54d73;font-size:14px;line-height:1.85;text-align:center;white-space:pre-wrap;overflow-wrap:anywhere}
+.record-audio{display:block;width:100%;height:42px;accent-color:#e84b8a}
+.record-note{margin:22px auto 0;color:#b05a7d;font-size:12px;line-height:1.8;text-align:center;opacity:.85}
+@media(max-width:650px){
+ .record-room{width:calc(100% - 8px);padding:5px 2px 24px;margin-bottom:35px}
+ .record-heading{margin-bottom:27px;padding:18px 13px 15px}
+ .record-card{padding:18px 11px 15px}
+ .record-description{font-size:13px}
+ .record-audio{height:40px}
+}
+
+.record-room-link-wrap{position:relative;z-index:3;text-align:center;margin:26px auto 4px}
+.record-room-link{font-size:clamp(14px,3.7vw,17px);padding:13px 19px}
+
+/* Opening birthday cake experience */
+.cake-intro{position:relative;z-index:20;min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden;padding:28px 14px 34px;background:radial-gradient(circle at 50% 22%,rgba(255,255,255,.95),transparent 29%),linear-gradient(145deg,#ffd8e7 0%,#ffc0d8 46%,#f7a7c5 100%);color:#7d3154;text-align:center}
+.cake-intro:before{content:"";position:absolute;inset:0;opacity:.3;pointer-events:none;background-image:radial-gradient(#fff 1px,transparent 1.5px),radial-gradient(#d96f9e 1px,transparent 1.5px);background-size:28px 28px,37px 37px;background-position:5px 9px,19px 21px}
+.cake-intro[hidden]{display:none!important}.cake-intro-content{position:relative;z-index:2;width:min(680px,100%)}
+.cake-kicker{margin:0 0 4px;color:#b43a72;font-size:12px;font-weight:900;letter-spacing:2px}.cake-title{margin:0;color:#e63f83;font-family:Tahoma,Arial,sans-serif;font-size:clamp(28px,8vw,52px);line-height:1.35;text-shadow:0 3px #fff,0 7px rgba(255,126,174,.24)}
+.cake-wish{margin:7px auto 0;max-width:550px;color:#8d3b60;font-size:clamp(15px,4vw,19px);line-height:1.9;font-weight:800}
+.cake-stage{position:relative;width:min(590px,96vw);height:clamp(350px,72vw,520px);margin:8px auto 0;filter:drop-shadow(0 18px 19px rgba(154,44,91,.2))}
+.cake-glow{position:absolute;width:72%;height:58%;left:14%;top:20%;border-radius:50%;background:rgba(255,255,255,.33);filter:blur(27px);animation:cake-glow 3.5s ease-in-out infinite}
+.cake-stand{position:absolute;left:8%;right:8%;bottom:9%;height:26px;border-radius:50%;background:linear-gradient(#fff8fd,#f6bdd4 44%,#c84a80 46%,#ef8fb2 63%,#fff0f7 66%);box-shadow:0 8px 0 #c75a87,0 12px 21px rgba(145,42,83,.24)}
+.cake-stand:before{content:"";position:absolute;left:13%;right:13%;top:14px;height:75px;border-radius:16px 16px 45px 45px;background:linear-gradient(90deg,#cf5e8b,#ffe4ef 20%,#fff 49%,#f7bad2 78%,#c94f81);box-shadow:inset 0 5px 8px rgba(255,255,255,.85),0 10px 8px rgba(157,40,85,.18)}
+.cake{position:absolute;left:8%;right:8%;bottom:25%;height:64%;transform:perspective(650px) rotateX(5deg);transform-style:preserve-3d}
+.tier{position:absolute;left:50%;transform:translateX(-50%);border-radius:50%/14%;box-shadow:inset 0 -12px 16px rgba(160,42,91,.17),inset 0 7px 10px rgba(255,255,255,.65),0 9px 9px rgba(162,45,91,.16)}
+.tier:after{content:"";position:absolute;left:0;right:0;bottom:-7px;height:18px;border-radius:50%;background:repeating-radial-gradient(ellipse at center,#fff 0 4px,#f5a6c8 5px 8px);opacity:.9}
+.tier-bottom{bottom:0;width:100%;height:39%;background:linear-gradient(90deg,#d9437f,#ff9fc2 23%,#ffd3e2 48%,#ff9abd 77%,#d63d78)}
+.tier-middle{bottom:28%;width:76%;height:32%;background:linear-gradient(90deg,#e86d9e,#fff3f8 27%,#fff 53%,#ffcade 78%,#db5a8f)}
+.tier-top{bottom:51%;width:52%;height:30%;background:linear-gradient(90deg,#f4b0ca,#fff 25%,#fffafa 55%,#f7b4cf 82%,#dd669a)}
+.tier-bottom:before,.tier-middle:before,.tier-top:before{content:"♡  •  ♡  •  ♡";position:absolute;left:0;right:0;bottom:14%;color:#fff4fb;font-size:clamp(13px,3vw,22px);letter-spacing:4px;text-shadow:0 2px #cb4a7f;white-space:nowrap}
+.tier-middle:before{content:"✿  ♡  ✿  ♡";color:#ffd6e7;text-shadow:0 1px #c34b7a}.tier-top:before{content:"✦  ♡  ✦";bottom:20%;font-size:clamp(12px,2.6vw,19px)}
+.frosting{position:absolute;left:-1%;right:-1%;top:-8px;height:26px;border-radius:50%;background:linear-gradient(#fffaff,#fff 45%,#ffd5e5);box-shadow:0 5px 0 rgba(224,89,139,.45)}
+.frosting:after{content:"";position:absolute;left:5%;right:5%;top:8px;height:21px;background:radial-gradient(circle at 8% 0,#fff 0 8px,transparent 9px),radial-gradient(circle at 28% 0,#fff 0 9px,transparent 10px),radial-gradient(circle at 50% 0,#fff 0 8px,transparent 9px),radial-gradient(circle at 73% 0,#fff 0 9px,transparent 10px),radial-gradient(circle at 94% 0,#fff 0 8px,transparent 9px)}
+.pearls{position:absolute;left:7%;right:7%;bottom:10%;height:13px;background:radial-gradient(circle,#fff 0 4px,#e9a4bf 5px,transparent 6px);background-size:24px 13px}
+.cake-flower{position:absolute;width:38px;height:38px;border-radius:50%;background:radial-gradient(circle,#ffd26e 0 5px,transparent 6px),conic-gradient(#fff 0 12%,transparent 12% 25%,#fff 25% 37%,transparent 37% 50%,#fff 50% 62%,transparent 62% 75%,#fff 75% 87%,transparent 87%);filter:drop-shadow(0 3px 2px rgba(171,56,99,.2));z-index:5}.flower-a{left:11%;bottom:32%}.flower-b{right:14%;bottom:57%;width:30px;height:30px}.cake-bow{position:absolute;right:5%;bottom:21%;font-size:40px;z-index:7;transform:rotate(12deg);filter:drop-shadow(0 3px 2px rgba(150,40,86,.2))}
+.cake-name{position:absolute;left:50%;bottom:43%;transform:translateX(-50%) rotate(-3deg);z-index:8;padding:5px 12px;border-radius:8px;color:#a83268;background:linear-gradient(#fff,#ffeaf3);border:2px solid #e5a0ba;box-shadow:0 3px 0 #cf638e;font-family:cursive;font-size:clamp(17px,4.6vw,28px);font-weight:900;white-space:nowrap}
+.candle-numbers{position:absolute;z-index:10;left:50%;bottom:73%;width:min(190px,34vw);height:auto;transform:translateX(-50%);overflow:visible;filter:drop-shadow(0 4px 3px rgba(132,40,77,.2))}.candle-wax{fill:none;stroke:#fff5fb;stroke-width:13;stroke-linecap:round;stroke-linejoin:round}.candle-shine{fill:none;stroke:#f6a4c2;stroke-width:4;stroke-linecap:round;stroke-dasharray:3 10}.flame{position:absolute;z-index:12;bottom:86%;width:23px;height:38px;border-radius:55% 45% 55% 45%;background:radial-gradient(ellipse at 50% 72%,#fffbd1 0 18%,#ffd15d 23% 45%,#ff7b72 70% 100%);box-shadow:0 0 15px #ffb33f,0 0 31px rgba(255,138,85,.6);animation:flame-flicker .65s ease-in-out infinite alternate;transform-origin:50% 100%}.flame-one{left:42%}.flame-nine{right:41%}.flame.off{animation:flame-out .9s ease forwards}.flame.blowing{animation:flame-blow .35s ease-in-out infinite alternate}
+.cake-sparkles{position:absolute;inset:0;pointer-events:none;color:#fff;font-size:clamp(18px,4vw,30px);text-shadow:0 0 8px #fff,0 0 13px #e75796;animation:cake-sparkle 2.2s ease-in-out infinite}.cake-sparkles:before{content:"✦   ✧       ♡    ✦       ✧   ♡";position:absolute;inset:8% 0 auto;letter-spacing:12px}.cake-sparkles:after{content:"✧       ✦   ♡       ✧       ✦";position:absolute;inset:auto 0 23%;letter-spacing:10px;animation-delay:-1.2s}
+.cake-controls{position:relative;z-index:3;width:min(540px,100%);margin:-3px auto 0}.blow-instruction{margin:0 auto 12px;color:#833355;font-size:clamp(15px,4vw,19px);line-height:1.85;font-weight:800}.mic-button,.enter-site-button{appearance:none;border:2px solid rgba(255,255,255,.95);border-radius:999px;padding:13px 21px;color:#fff;background:linear-gradient(135deg,#ff79ae,#e23f81);font-family:Tahoma,Arial,sans-serif;font-size:clamp(14px,3.8vw,17px);font-weight:900;box-shadow:0 7px 0 rgba(172,51,98,.16),0 12px 24px rgba(178,51,101,.22),inset 0 1px rgba(255,255,255,.55);cursor:pointer;transition:transform .2s,filter .2s}.mic-button:hover,.enter-site-button:hover{transform:translateY(-2px);filter:saturate(1.08)}.mic-button:active,.enter-site-button:active{transform:translateY(2px)}.mic-button:focus-visible,.enter-site-button:focus-visible{outline:3px solid #fff;outline-offset:4px}.mic-button.listening{background:linear-gradient(135deg,#c43c78,#8c2e5d);animation:mic-pulse 1s ease-in-out infinite}.meter{width:min(260px,80%);height:9px;margin:13px auto 0;border-radius:99px;background:rgba(255,255,255,.55);overflow:hidden}.meter-bar{display:block;width:4%;height:100%;border-radius:inherit;background:linear-gradient(90deg,#ff5b98,#ffc2d9);transition:width .08s}.cake-status{min-height:22px;margin:11px auto 0;color:#954368;font-size:12px;line-height:1.7}.enter-site-button{display:none;margin-top:10px;padding:10px 18px;font-size:14px;background:linear-gradient(135deg,#fff,#ffe5ef);color:#b33c71;box-shadow:0 5px 15px rgba(167,53,99,.16)}.enter-site-button.visible{display:inline-block}.cake-intro.celebrated .cake-sparkles{animation:cake-sparkle .5s ease-in-out 5}.cake-intro.celebrated .cake{animation:cake-celebrate 1.2s ease}.cake-intro.celebrated .cake-name{box-shadow:0 0 18px #fff,0 3px 0 #cf638e}.cake-intro.celebrated .flame{animation:flame-out .9s ease forwards}
+@keyframes flame-flicker{from{transform:scale(.94) rotate(-5deg)}to{transform:scale(1.06) rotate(5deg)}}@keyframes flame-blow{from{transform:skewX(-17deg) scaleY(1.08) rotate(-12deg)}to{transform:skewX(20deg) scaleY(.85) rotate(15deg)}}@keyframes flame-out{0%{opacity:1;transform:scale(1)}55%{opacity:.8;transform:scale(.72) skewX(20deg)}100%{opacity:0;transform:scale(.06) translateY(8px)}}@keyframes cake-glow{0%,100%{opacity:.45;transform:scale(.94)}50%{opacity:.82;transform:scale(1.08)}}@keyframes cake-sparkle{0%,100%{opacity:.45;transform:scale(.9)}50%{opacity:1;transform:scale(1.04)}}@keyframes cake-celebrate{0%,100%{transform:perspective(650px) rotateX(5deg) translateY(0)}45%{transform:perspective(650px) rotateX(5deg) translateY(-8px) scale(1.02)}}@keyframes mic-pulse{50%{box-shadow:0 0 0 8px rgba(255,255,255,.2),0 12px 24px rgba(178,51,101,.22)}}
+@media(max-width:520px){.cake-intro{padding-top:18px}.cake-stage{height:370px;margin-top:0}.cake{bottom:24%;height:61%}.candle-numbers{bottom:71%}.flame{bottom:85%;width:18px;height:30px}.cake-name{bottom:40%}.cake-stand{bottom:8%}.cake-wish{font-size:15px}.cake-controls{margin-top:-2px}}
+@media(prefers-reduced-motion:reduce){.cake-intro *{animation-duration:.01ms!important;animation-iteration-count:1!important;transition:none!important}}
+
+.cake-intro.reference-mode .cake-stage{height:clamp(430px,105vw,700px);margin:12px auto 4px}
+.cake-reference-image{position:relative;z-index:4;display:block;width:100%;height:100%;object-fit:contain;border-radius:24px;filter:saturate(1.04) contrast(1.02);box-shadow:0 18px 38px rgba(134,42,86,.22),0 0 0 7px rgba(255,240,247,.35);animation:reference-breathe 5s ease-in-out infinite}
+.cake-intro.reference-mode .cake,.cake-intro.reference-mode .cake-stand,.cake-intro.reference-mode .cake-glow{display:none}
+.cake-intro.reference-mode .cake-sparkles{z-index:5;opacity:.7}
+.cake-intro.reference-mode .mic-button,.cake-intro.reference-mode .meter{display:none}
+.cake-intro.reference-mode .enter-site-button{display:inline-block}
+.cake-intro.reference-mode .cake-controls{margin-top:8px}
+@keyframes reference-breathe{0%,100%{transform:scale(.99)}50%{transform:scale(1.005)}}
+@media(max-width:520px){.cake-intro.reference-mode .cake-stage{height:clamp(410px,120vw,610px);width:min(96vw,470px)}}
+
+/* Full-screen cake-only opening interaction */
+.cake-intro.reference-mode{justify-content:space-between;padding:12px 12px 18px}
+.cake-intro.reference-mode .cake-kicker,.cake-intro.reference-mode .cake-title,.cake-intro.reference-mode .cake-wish{display:none}
+.cake-intro.reference-mode .cake-stage{width:min(96vw,640px);height:auto;aspect-ratio:2/3;max-height:calc(100svh - 142px);min-height:0;margin:0 auto;flex:1}
+.cake-intro.reference-mode .cake-reference-image{position:absolute;inset:0;height:100%;object-fit:cover;border-radius:20px;box-shadow:0 15px 34px rgba(134,42,86,.25),0 0 0 6px rgba(255,240,247,.38);animation:none;transition:opacity 2.2s ease,transform 2.2s ease,filter 2.2s ease}
+.cake-intro.reference-mode .cake-reference-image.fading{opacity:0;transform:scale(1.045);filter:blur(4px)}
+.cake-intro.reference-mode .cake-sparkles{z-index:5;opacity:.7}
+.cake-intro.reference-mode .cake-glow,.cake-intro.reference-mode .cake{display:none}
+.cake-intro.reference-mode .cake-controls{width:min(540px,100%);margin:8px auto 0;flex:none}
+.cake-intro.reference-mode .mic-button{display:inline-block}
+.cake-intro.reference-mode .meter{display:none}
+.cake-intro.reference-mode .enter-site-button{display:none}
+.cake-intro.reference-mode .enter-site-button.visible{display:inline-block}
+.image-flame{position:absolute;z-index:8;width:clamp(16px,3.5vw,27px);height:clamp(27px,5.8vw,44px);border-radius:55% 45% 55% 45%;background:radial-gradient(ellipse at 50% 72%,#fffbd1 0 18%,#ffd15d 23% 45%,#ff7b72 70% 100%);box-shadow:0 0 14px #ffb33f,0 0 29px rgba(255,138,85,.65);animation:flame-flicker .65s ease-in-out infinite alternate;transform-origin:50% 100%;transition:opacity .5s ease}
+.image-flame.one{left:42.1%;top:13.0%}.image-flame.nine{left:54.8%;top:13.0%}
+.image-flame.blowing{animation:flame-blow .35s ease-in-out infinite alternate}.image-flame.off{animation:flame-out .9s ease forwards}
+@media(max-width:520px){.cake-intro.reference-mode{padding:8px 8px 14px}.cake-intro.reference-mode .cake-stage{width:min(98vw,500px);max-height:calc(100svh - 125px)}.cake-intro.reference-mode .cake-controls{margin-top:6px}.image-flame.one{left:42.1%;top:13.0%}.image-flame.nine{left:54.8%;top:13.0%}}
+
+html.cake-locked,body.cake-locked{overflow:hidden!important;height:100svh!important;overscroll-behavior:none!important}
+body.cake-locked main#siteContent,body.cake-locked #albumGate,body.cake-locked #memoryAlbum,body.cake-locked #recordRoom{display:none!important}
+.cake-intro.reference-mode{height:100svh;min-height:100svh;max-height:100svh;overflow:hidden;overscroll-behavior:none}
+
+.cake-intro.reference-mode{opacity:1;transition:opacity 2.4s ease,visibility 0s linear 0s}
+.cake-intro.reference-mode.cake-section-fading{opacity:0;visibility:hidden;pointer-events:none;transition:opacity 2.4s ease,visibility 0s linear 2.4s}
+
+.final-love-note{position:relative;width:min(650px,94%);margin:42px auto 0;padding:25px 17px 21px;text-align:center;background:linear-gradient(145deg,#fffefe,#fff5fa);border:1px solid rgba(255,255,255,.98);border-radius:12px 6px 14px 7px;box-shadow:0 12px 28px rgba(166,61,103,.15),0 2px 0 #f5c5d7,inset 0 0 0 1px #f9e2eb;transform:rotate(-.45deg)}
+.final-love-note:before{content:"♡  ✦  ♡";display:block;margin:0 0 10px;color:#ee7eaa;font-size:20px;letter-spacing:7px}.final-love-text{margin:0;color:#d84988;font-size:clamp(17px,4.3vw,23px);line-height:2.05;font-weight:900;white-space:pre-wrap}.final-photo-reveal{display:block;width:min(510px,92%);margin:22px auto 0;padding:0;border:0;background:none;cursor:pointer;touch-action:manipulation}.final-photo-reveal img{display:block;width:100%;height:auto;max-height:600px;object-fit:contain;border-radius:10px;filter:blur(18px);opacity:.78;transform:scale(.98);transition:filter 1.1s ease,opacity 1.1s ease,transform 1.1s ease;box-shadow:0 10px 25px rgba(166,61,103,.18)}
+.final-photo-reveal.revealed img{filter:blur(0);opacity:1;transform:scale(1)}.final-photo-hint{margin:10px 0 0;color:#a54d73;font-size:12px;line-height:1.7}.final-photo-reveal.revealed .final-photo-hint{color:#d84988;font-weight:800}
+
+.relationship-counter{position:relative;z-index:3;width:min(720px,calc(100% - 18px));margin:0 auto 24px;padding:21px 14px 19px;text-align:center;background:linear-gradient(145deg,rgba(255,255,255,.94),rgba(255,241,247,.92));border:1px solid rgba(255,255,255,.95);border-radius:13px 6px 15px 7px;box-shadow:0 10px 27px rgba(166,61,103,.14),0 2px 0 #f5c5d7,inset 0 0 0 1px #f9e2eb;transform:rotate(-.35deg)}
+.relationship-counter:before{content:"♡  ✦  ♡";display:block;margin-bottom:5px;color:#f087b2;font-size:18px;letter-spacing:7px}.relationship-title{margin:0;color:#df4b88;font-size:clamp(20px,5vw,29px);line-height:1.55;font-weight:900}.relationship-subtitle{margin:3px 0 14px;color:#9b3f69;font-size:13px;line-height:1.7}.counter-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:7px;direction:ltr}.counter-unit{min-width:0;padding:8px 3px 7px;border-radius:9px;background:rgba(255,255,255,.72);border:1px solid #f5c8d9;box-shadow:0 3px 8px rgba(190,67,112,.08)}.counter-value{display:block;color:#d84482;font-size:clamp(19px,5vw,29px);font-weight:900;line-height:1.2;font-variant-numeric:tabular-nums}.counter-label{display:block;margin-top:4px;color:#a54d73;font-size:clamp(10px,2.5vw,12px);font-weight:800}.relationship-date{margin:13px 0 0;color:#b05a7d;font-size:11px;line-height:1.7}
+@media(max-width:390px){.relationship-counter{padding-left:8px;padding-right:8px}.counter-grid{gap:4px}.counter-unit{padding-left:1px;padding-right:1px}.counter-value{font-size:18px}.counter-label{font-size:9px}}
+
+</style>
+
+</head>
+<body>
+
+<section class="cake-intro reference-mode" id="cakeIntro" aria-label="مفاجأة عيد ميلاد إكرامو">
+  <div class="cake-intro-content">
+    <p class="cake-kicker">A ROYAL BIRTHDAY SURPRISE</p>
+    <h1 class="cake-title">عيد ميلاد سعيد إكرامو 🎀</h1>
+    <p class="cake-wish">تمنييي اميةةةة عمرييي 🎂💗</p>
+    <div class="cake-stage" aria-label="كيكة إكرامو الوردية مع شموع 19 مطفأة">
+      <img class="cake-reference-image" src="cake-ikramo-off.png" alt="كيكة وردية فاخرة لإكرامو مع شموع الرقم 19 مطفأة" fetchpriority="high">
+      <span class="image-flame one" id="imageFlameOne" aria-label="لهب الشمعة الأولى"></span>
+      <span class="image-flame nine" id="imageFlameNine" aria-label="لهب الشمعة الثانية"></span>
+      <div class="cake-glow" aria-hidden="true"></div>
+      <div class="cake-sparkles" aria-hidden="true"></div>
+      <div class="cake">
+        <div class="tier tier-bottom"><span class="frosting"></span><span class="pearls"></span></div>
+        <div class="tier tier-middle"><span class="frosting"></span><span class="pearls"></span></div>
+        <div class="tier tier-top"><span class="frosting"></span><span class="pearls"></span></div>
+        <span class="cake-flower flower-a" aria-hidden="true"></span><span class="cake-flower flower-b" aria-hidden="true"></span>
+        <span class="cake-bow" aria-hidden="true">🎀</span><span class="cake-name">إكرامو</span>
+        <svg class="candle-numbers" viewBox="0 0 180 100" role="img" aria-label="شمعتا الرقم 19">
+          <path class="candle-wax" d="M43 82V21L29 31"/><path class="candle-shine" d="M43 76V27"/>
+          <path class="candle-wax" d="M105 28C105 12 143 11 143 30C143 44 127 47 111 45V80"/><path class="candle-shine" d="M111 28C113 20 127 19 134 24"/>
+        </svg>
+        <span class="flame flame-one" id="flameOne" aria-hidden="true"></span><span class="flame flame-nine" id="flameNine" aria-hidden="true"></span>
+      </div>
+      <div class="cake-stand" aria-hidden="true"></div>
+    </div>
+    <div class="cake-controls">
+      <p class="blow-instruction" id="blowInstruction">انفخي مليحح على الشموعع عمريي 🎀</p>
+      <button class="mic-button" id="micButton" type="button">اوففف اوففف باه تطفىى 🎂💗</button>
+      <div class="meter" aria-hidden="true"><span class="meter-bar" id="meterBar"></span></div>
+      <p class="cake-status" id="cakeStatus" role="status" aria-live="polite">نحبك ولله العظيم💗</p>
+      <button class="enter-site-button" id="enterSiteButton" type="button">دخلي للرسالة بدون المايك 💗</button>
+    </div>
+  </div>
+</section>
+
+<main class="page" id="siteContent" hidden>
+
+  <section class="relationship-counter" aria-label="عداد مدة العلاقة">
+    <h2 class="relationship-title">حكايتنا عمريي  💗</h2>
+    <p class="relationship-subtitle">و كل ثانية ولله يزيد حبي يا عمري</p>
+    <div class="counter-grid" aria-live="polite">
+      <div class="counter-unit"><span class="counter-value" id="counterYears">0</span><span class="counter-label">سنة</span></div>
+      <div class="counter-unit"><span class="counter-value" id="counterMonths">0</span><span class="counter-label">شهر</span></div>
+      <div class="counter-unit"><span class="counter-value" id="counterDays">0</span><span class="counter-label">يوم</span></div>
+      <div class="counter-unit"><span class="counter-value" id="counterHours">0</span><span class="counter-label">ساعة</span></div>
+      <div class="counter-unit"><span class="counter-value" id="counterMinutes">0</span><span class="counter-label">دقيقة</span></div>
+      <div class="counter-unit"><span class="counter-value" id="counterSeconds">0</span><span class="counter-label">ثانية</span></div>
+    </div>
+    <p class="relationship-date">ولله  نعشقك حبي للابد  ✨</p>
+  </section>
+ <div class="glow" aria-hidden="true"></div>
+ <span class="sparkle sp1" aria-hidden="true">✧</span><span class="sparkle sp2" aria-hidden="true">✦</span><span class="sparkle sp3" aria-hidden="true">♡</span><span class="sparkle sp4" aria-hidden="true">✧</span><span class="sparkle sp5" aria-hidden="true">✦</span>
+ <img class="sticker s1" src="stickers/bow-pink.png" alt="" fetchpriority="high">
+ <img class="sticker s2" src="stickers/bow-blush.png" alt="" fetchpriority="high">
+ <img class="sticker s3" src="stickers/balloons-pink.png" alt="" fetchpriority="high">
+ <img class="sticker s4" src="stickers/teddy-bear.png" alt="" fetchpriority="high">
+ <img class="sticker s5" src="stickers/roses-bouquet.png" alt="" loading="eager">
+ <img class="sticker s6" src="stickers/stars-metallic.png" alt="" loading="eager">
+ <img class="sticker s7" src="stickers/rose-bouquet-large.png" alt="" loading="eager">
+ <img class="sticker s8" src="stickers/tulips.png" alt="" loading="eager">
+ <img class="sticker s9" src="stickers/quote-heart.png" alt="" loading="eager">
+ <img class="sticker s10" src="stickers/cake-strawberries.png" alt="" loading="eager">
+ <img class="sticker s11" src="stickers/party-kitten.png" alt="" loading="eager">
+ <img class="sticker s12" src="stickers/balloons-heart-bouquet.png" alt="" loading="eager">
+
+ <section class="paper" aria-label="رسالة إكرامو الأخيرة">
+   <img class="corner tl" src="stickers/bow-pink.png" alt="" aria-hidden="true">
+   <img class="corner br" src="stickers/lily-pink.png" alt="" aria-hidden="true">
+   <img class="paper-sticker top-bow" src="stickers/bow-blush.png" alt="" aria-hidden="true">
+   <div class="message-sticker-layer" id="messageStickerLayer" aria-hidden="true"></div>
+   <h1 class="main-title">إكرامو يا عمري 🎀</h1>
+   <p class="subtitle">ذي هي الرسالة الأخيرة فللعبةةة<br><span style="color:#ff4f94">مبروككككك 💗</span></p>
+   <div class="divider" aria-hidden="true">♡ ✦ ♡</div>
+   <!-- بدّل النص التجريبي برسالتك كاملة، وخلي وسمَي div كما هما. -->
+   <div class="letter-text" id="letterText">💌اكرامو حبي يا عيوني اكثر شخصصص قريب ليا فدنيا ذيي ما نعرفش حتى منين نبدا ولله لانو كي نسيي نهدر على وش تمثلي ليا نحس الكلمات مهما كانت كبيرة تبقى صغيرة قدام الاحساس اللي عنديليك بصح اليوممم عيييييد ميلادككك حبيييييي و اليوم بذات حبيت نخليلك كلام تقدري ترحعييي تقرايه كل مرة تحتاجيي تتفكري قداش نتتي غالية عليا حبي 
+
+ولله يا اكرامو وصلتيي لاخر رسالة فللعبةةة يا عمريي نتياا و ولله لو بيدي ولله جججامي راح نخلي رسالة تكون الاخيرة ولله نكتبلك بلالاف ولله نكتب ما نحبس حرفيا رسالة لكل مرة تفرحي فيها وحدة كل مرة تحققي فيها حاجة حابتها وحدة لكل عيد ميلاد يجوز  و وحدة باه تتفكري شحال نتي انسانة مميزة  و ولله كل يوم مي الكلمات ولله يخلاصو 
+
+اليوم هو نهارك اني وايز اميرتي  اليوم هو النهاررر لي نحبككك فيههه تنساي كل حاجة تعباتك في حياتك و نتي 18 سنةة دك راكي 19 يا حبييي افرحيييي بروحككك و بلانسانة لي راكي تولي فيهاا مع لياماتتت راكي اليومم في عمر جديددد و قدامككك حكاياتت مازال ما عشتيهمشش و بلايص مازال ما شفتيهمشش ضحكاتت مزال ما ضحكتيهمش و احلام مزالها تستنا فيه و كامل نديروهم مع بعض حبي برك انا و نتي و دايمن راني معاك فكلشي ولله و كل مرة نديرو حاجة مع بعض من ذوراح تتفكري بلي يمكن انا ابعد شخص تعرفيه مسافتا مي الاقرب قلبا حبي و نفس شي ليك ولله بنسبة ليا ولله نعشقك حبي 
+نتمنى العام هذا يعطيك اسباب كثر باه تضحكي و باه تحبي تعيشي و ي شوفي غصب عنك تحبيي تعيشيي هششششش لانو عندكك انااا المهمممم و ان شاء الله يعوضك ذا اعام فكل لحظة بكيتي فيها وحدك و يجيبلك يامات تخليك 
+تحسي بلي وش تعبتي فلوقت لي فات ماتعبتيهش في باطل بل تشوفي نتيجة و كامل ذا و انا معاك فذا العام و لعوام كامل لي راهم جايين حبي  ولله نتمنى تكتاشفي في روحك حاجات جدد ملاح و تفرحي بيهم و حاجات مش ملاح و تسيي تصلحيهم مع روحك ان شاء الله مشاكلك كامل يتطواو و تعيشي حياة شابة برك و معايا و نستناو برك وقتاه نتزوجو باه نتهناو من كلشيي و  خصك تعرفي بلي الايام لي راكي تعيشيم كامل انا نكون فيهم نشجع فيك و نسمعلك و نرفدك و نعاونك فكلشي  كي تجوزي على يامات يتعبوك ولا سيءين 
+لانو قيمتك جامي تتبدل كي تتعبيي و ما تنقصش كي تغلطييي وما تحتاجيش تثبتي لاي واحد بلي تستاهلي تكوني محبوبة لانو نتي ولله تستاهليها و تستاهلي الافضل فكلشيي 
+و اذا كاين حاجة نحبك تاخذيها معاك من هذي الرسالة ولا الهدية انو عيد ميلادك ماشي غير احتفال بعام فات برك من حياتك بل هو بداية عام جديد عام تستاهلي تعيشيه بطريقتك عام تحلمي فيه بلا خوف و عام تفرحي فيه بلا ما تحسي بلي لازم يكون كلشي مثالي  ما نعرفوش وش مخبي المستقبل لينا و هذا اجمل جزء لانو نعرف بلي من احمل الحاجات لي نتمناها فيه انو نكون حاضر في حكايتك و نشوفك تكبري و تنجحي و نعيش معاك الايام لي رانا نتخايلوهم ليوم من تيليفونات  نتمنى يجي نهار نحتافل بعيد ميلادككمعاك  و نرفدك و ندور بيك و نجري كشغل اميرة ديزني تاعي برك  ما نحتاجش نكتبلك بلي نتمنى نعنقك خاطر لتم نكون قادر نديرها بلا ما نقولك طول نرفدك بعنوقة ولله  و نضحك معاك على هذي اليامات لي كنا نتمناو فيها غير نكونو قريبين من بعض مش نضحك لانو حاجة تافهة و تضحك بل نضحك لانو نشوف في عمادو لقديم و اكرامو لقديمة يكافحو و انا و نتي و حنا كبار نشوفو رواحتينا كيوت و هايلين و نضحكو و  نتفكرو كلشي 
+حتى كي تتبدل اعمارنا و تتبدل ظروفنا و تكبر احلامنا نتمنى نبقاو نلقاو بعضانا قراب من بعض مهما صرا  و راغبين فبعضنا نفس الربغة و حابين بعضنا بنفس النقاوة و محتارمين بعضنا نفس الاحترام انا ما نحبش نكون برك شخص عندو كلام شباب يقولهولك في عيد ميلادك حبي ولله لانو لكلام راه بسيف عليا و اقل حاجة نقدر نديرها ولله و ولله تستاهلي كثر بمليار مرة  مي نحب نكون انسان عندو بلاصة تع الصح في حياتك انسان تشوفيه في المواقف قبل الرسايل و تلقايه يحاول يفهمك حتى ما تكونش الامور ساهلة  و ما نطلبش منك تصدقي المستقبل كامل من اليوم نخلو اليامات توريلنا وش نقدرو نبنيو مع بعض خطوة بخطوة و بحب صادق في افعالو و كلامو 
+ولله لو عندي وش نتمنى فعيد ميلادك ليك ما نقولكش برك نتمنى تكوني فرحانة معايا و نكونو تع بعض ذو لانو نقلهم باينا و نقولك تان نتمنى تكوني فرحانة كامل حياتك في احلامك في قرايتك في الحاجات لي تحبيهم و في اللحظات لي تكوني فيها وحدك مع روحك مع انو انا سامط مستحيل نخليك مع روحك صراحة لاسق فيك للابدد حتى و نتي مقلقة تقوليلي حابة تريحي وحدم جامي خليتكك واهاهاهاها ولله نحبك توصلي لمرحلة تشوفي فيها روحك بعينيا  و تعرفي شحال تستاهلي من خير و فرحة و نجاح و اذا قدرت نكون جزء من ذي الفرحة و نزيد لحياتك ضحكة و راحة و بزاف ذكريات شابين تستاهل تتعاش ولله هذا وحدو يعنيلي الدنيا كامل و يفرح قلبي 
+و بيني و بينك حبي ولله عندي امية عارفتها نتي و انا عارفها و باينا لوج نتمناوها يا عمري  نتمنى كي نكبرو و يفوتو علينا لعوام تتفكري هذا العيد الميلاد لي هو اول واحد مع بعض فيه و تضحكي و انا نكون قدامك فصح و تجي تحكيلي تقوليلي تشفى عيد ميلاد و نعاودو نفتحو ذي الرسالة و نقراوها و نفرحو على اليامات الشابين و اللحظات الحوة لي جوزناها مع بعض ولله العظيم كيما دو الحاجات ينسوك فمشاكلك حتى لو كنت غارق فيهم  و ولله حاب نوصلح برك بلي عيد ميلادك يا روحي يستاهل يحتفل بيه بطريقة شابة و كيوت تشبهلك  و نتمنى نكون من اليوم لذاك الوقت الشخص لي يقدر يشوف ابتسامتك قدامو و يقولك شفتي حبي كبرنا و عشنا و تجمعنا و مزال كاين وش نعيشو ولله نحبك اكرامو نحبك من كل قلبي
+عيد  ميلاد سعيد عمري يا اكرامو يا اميرت يا غزالتي يا حب حياتي ربي يجعل عمرط الجاي اجمل من لي فات و يكتبلك الخير ين ما تروحي و يحفظلك قلبك و احلامك و يعطيك فرحة كثر من كل فرحة تخيلتيها و ني حاب نبقاو مع بعض حبي نكبرو و نشوفو فبعض نكبرو و نتزوجو و نعيشو و نبنو و نحقو احلام و نكونو الشخص لي يشارك الفرحة و يصنع الذكريات مع الشخص التاني لبعضانا حبي 
+نعشقكاكرامو و ما نحبش نختك ذي الرسالة بوداع كبير و خلاص نحب نختمها بحاجة حابها من كل قلبي  و قولييي امييننن ولا ولله غير نعضككك 
+يا ربي اذا كان فيها الخير لبعضانا اجمعنا في حلالك و خلينا نعيشو يامات كيما هذا النهار وين نكونو قراب من بعض و نحتافلو مش بكل عام نجوزوه مع بعض بل بكل يوم نجوزوه مع بعض و نحتافلو باحلامنا لي تحققت و كل حاجة شابة رزقتنا بيها يا الله 
+
+
+
+
+كل عام و نتي بخير حبي نحبك ولله و نعشقك و نموت عليك عيوني و كل عا و نتي قريبة ليا و ني قريب ليك و كل عام و نتي في فرحة ان شاء الله 
+
+هابيييي برثثث دايييييي  توووووووووووووووو يوووووووووووووووو مواححح
+
+
+
+نحبك💌</div>
+   <p class="joke">(فارغة شغل طميتي الفين شمعةة😭😭😭<br>نتمسخر ولله 😭🎀)</p>
+   <div class="bottom-hearts" aria-hidden="true">💗　🎀　🌷　💗</div>
+ </section>
+</main>
+
+<section class="album-gate" id="albumGate" hidden aria-label="الانتقال إلى ألبوم الذكريات">
+  <p class="album-gate-note">كي تكملي الرسالة، عندك باقي ذكرياتنا يا إكرامو 💗</p>
+  <button class="album-start-button" id="startAlbumButton" type="button">
+    🎵 كمّلي رحلتنا يا إكرامو 🎀
+  </button>
+  <p class="music-status" id="musicStatus" role="status" aria-live="polite">عبزيي هناااا تفتحيي كثرررر 💗</p>
+</section>
+
+<section class="memory-album" id="memoryAlbum" aria-label="ألبوم ذكريات إكرامو" hidden>
+  <header class="album-heading">
+    <h2 class="album-title">ألبوم ذكرياتنا 🎀</h2>
+    <p class="album-subtitle">صور صغيرة لحكايتنا الكبيرة 💗</p>
+  </header>
+  <div class="memories-stack" id="memoriesStack"></div>
+  <p class="memory-last-note">نحبك إكرامو 💗</p>
+  <div class="album-sticker-divider" aria-hidden="true">
+    <img src="stickers/bow-pink.png" alt="" loading="lazy">
+    <img src="stickers/heart-gloss.png" alt="" loading="lazy">
+    <img src="stickers/roses-bouquet.png" alt="" loading="lazy">
+    <img src="stickers/teddy-bear.png" alt="" loading="lazy">
+    <img src="stickers/balloons-heart-bouquet.png" alt="" loading="lazy">
+    <img src="stickers/tulips.png" alt="" loading="lazy">
+    <img src="stickers/flower-glitter.png" alt="" loading="lazy">
+    <img src="stickers/party-kitten.png" alt="" loading="lazy">
+  </div>
+  <div class="sticker-garden" aria-hidden="true">
+  <img src="stickers/balloons-heart-bouquet.png" alt="" loading="lazy" draggable="false">
+  <img src="stickers/balloons-pink.png" alt="" loading="lazy" draggable="false">
+  <img src="stickers/botanical-1.png" alt="" loading="lazy" draggable="false">
+  <img src="stickers/botanical-2.png" alt="" loading="lazy" draggable="false">
+  <img src="stickers/botanical-3.png" alt="" loading="lazy" draggable="false">
+  <img src="stickers/botanical-4.png" alt="" loading="lazy" draggable="false">
+  <img src="stickers/botanical-5.png" alt="" loading="lazy" draggable="false">
+  <img src="stickers/botanical-6.png" alt="" loading="lazy" draggable="false">
+  <img src="stickers/botanical-7.png" alt="" loading="lazy" draggable="false">
+  <img src="stickers/botanical-8.png" alt="" loading="lazy" draggable="false">
+  <img src="stickers/botanical-9.png" alt="" loading="lazy" draggable="false">
+  <img src="stickers/botanical-10.png" alt="" loading="lazy" draggable="false">
+  <img src="stickers/botanical-11.png" alt="" loading="lazy" draggable="false">
+  <img src="stickers/bow-blush.png" alt="" loading="lazy" draggable="false">
+  <img src="stickers/bow-pink.png" alt="" loading="lazy" draggable="false">
+  <img src="stickers/cake-strawberries.png" alt="" loading="lazy" draggable="false">
+  <img src="stickers/champagne.png" alt="" loading="lazy" draggable="false">
+  <img src="stickers/flower-glitter.png" alt="" loading="lazy" draggable="false">
+  <img src="stickers/heart-gloss.png" alt="" loading="lazy" draggable="false">
+  <img src="stickers/heart-small.png" alt="" loading="lazy" draggable="false">
+  <img src="stickers/lily-pink.png" alt="" loading="lazy" draggable="false">
+  <img src="stickers/party-kitten.png" alt="" loading="lazy" draggable="false">
+  <img class="wide-sticker" src="stickers/quote-darling-perfect.png" alt="" loading="lazy" draggable="false">
+  <img class="wide-sticker" src="stickers/quote-heart.png" alt="" loading="lazy" draggable="false">
+  <img class="wide-sticker" src="stickers/quote-moon-stars.png" alt="" loading="lazy" draggable="false">
+  <img src="stickers/quote-wood.png" alt="" loading="lazy" draggable="false">
+  <img class="wide-sticker" src="stickers/quote-youre-mine.png" alt="" loading="lazy" draggable="false">
+  <img src="stickers/rose-bouquet-large.png" alt="" loading="lazy" draggable="false">
+  <img src="stickers/roses-bouquet.png" alt="" loading="lazy" draggable="false">
+  <img src="stickers/stars-metallic.png" alt="" loading="lazy" draggable="false">
+  <img src="stickers/teddy-bear.png" alt="" loading="lazy" draggable="false">
+  <img src="stickers/tulips.png" alt="" loading="lazy" draggable="false">
+ </div>
+  <div class="record-room-link-wrap">
+    <button class="album-start-button record-room-link" id="recordRoomButton" type="button">🎶هنا تسجيلاتيييي💗</button>
+  </div>
+</section>
+
+
+<section class="record-room" id="recordRoom" aria-label="تسجيلات إكرامو" hidden>
+  <header class="record-heading">
+    <h2 class="record-title">تسجيلاتي لكِ 🎶</h2>
+    <p class="record-subtitle">هنا العشوائية ولدتتت😭😭😭 💗</p>
+  </header>
+  <div class="record-list" id="recordList"></div>
+  <p class="record-note">نحبككككككككككككككككككككككككككككك</p>
+  <section class="final-love-note" aria-label="الرسالة الأخيرة لإكرامو">
+    <p class="final-love-text">اكرامو ولله "نعشقك ولله العظيم حبي نتي كلشي ليا ولله  هاكيي هايليك الرسمةةةةة تاعككككككككككككككككككك لي كنت نرسمم فيهااااا حبييييي</p>
+    <button class="final-photo-reveal" id="finalPhotoReveal" type="button" aria-label="اضغطي لإظهار الصورة بوضوح">
+      <img src="photos/dw.png" alt="رسمة إكرامو" loading="lazy">
+      <span class="final-photo-hint">اضغطي على الصورة باش تبان واضحة 💗</span>
+    </button>
+  </section>
+</section>
+
+<audio id="birthdaySong" src="audio/ikramo-birthday.mp3" loop preload="auto" playsinline aria-label="أغنية عيد ميلاد إكرامو"></audio>
+
+
+
+<script>
+(() => {
+  // غيّري السنة فقط إذا كان 4 فيفري المقصود من سنة أخرى.
+  const relationshipStart = new Date('2026-02-04T00:00:00');
+  const fields = {
+    years: document.getElementById('counterYears'),
+    months: document.getElementById('counterMonths'),
+    days: document.getElementById('counterDays'),
+    hours: document.getElementById('counterHours'),
+    minutes: document.getElementById('counterMinutes'),
+    seconds: document.getElementById('counterSeconds')
+  };
+  function updateRelationshipCounter() {
+    const now = new Date();
+    if (now < relationshipStart) return;
+    let cursor = new Date(relationshipStart);
+    let years = now.getFullYear() - cursor.getFullYear();
+    cursor.setFullYear(cursor.getFullYear() + years);
+    if (cursor > now) { years--; cursor.setFullYear(cursor.getFullYear() - 1); }
+    let months = now.getMonth() - cursor.getMonth();
+    if (months < 0) months += 12;
+    const monthCursor = new Date(cursor);
+    monthCursor.setMonth(monthCursor.getMonth() + months);
+    if (monthCursor > now) { months--; monthCursor.setMonth(monthCursor.getMonth() - 1); }
+    const remaining = now - monthCursor;
+    const days = Math.floor(remaining / 86400000);
+    const hours = Math.floor((remaining % 86400000) / 3600000);
+    const minutes = Math.floor((remaining % 3600000) / 60000);
+    const seconds = Math.floor((remaining % 60000) / 1000);
+    fields.years.textContent = years;
+    fields.months.textContent = months;
+    fields.days.textContent = days;
+    fields.hours.textContent = hours;
+    fields.minutes.textContent = minutes;
+    fields.seconds.textContent = seconds;
+  }
+  updateRelationshipCounter();
+  setInterval(updateRelationshipCounter, 1000);
+})();
+</script>
+
+<script>
+(() => {
+  document.documentElement.classList.add('cake-locked');
+  document.body.classList.add('cake-locked');
+  const intro = document.getElementById('cakeIntro');
+  const siteContent = document.getElementById('siteContent');
+  const albumGate = document.getElementById('albumGate');
+  const micButton = document.getElementById('micButton');
+  const enterButton = document.getElementById('enterSiteButton');
+  const status = document.getElementById('cakeStatus');
+  const instruction = document.getElementById('blowInstruction');
+  const meter = document.getElementById('meterBar');
+  const flames = [document.getElementById('flameOne'), document.getElementById('flameNine'), document.getElementById('imageFlameOne'), document.getElementById('imageFlameNine')];
+  const referenceImage = document.querySelector('.cake-reference-image');
+  let stream = null;
+  let audioContext = null;
+  let raf = 0;
+  let celebrated = false;
+
+  function revealSite(keepCakeVisible = false) {
+    if (!keepCakeVisible) intro.hidden = true;
+    document.documentElement.classList.remove('cake-locked');
+    document.body.classList.remove('cake-locked');
+    siteContent.hidden = false;
+    albumGate.hidden = false;
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function releaseMic() {
+    if (raf) cancelAnimationFrame(raf);
+    if (stream) stream.getTracks().forEach((track) => track.stop());
+    stream = null;
+    if (audioContext && audioContext.state !== 'closed') audioContext.close().catch(() => {});
+    audioContext = null;
+    meter.style.width = '4%';
+    micButton.classList.remove('listening');
+  }
+
+  function celebrate() {
+    if (celebrated) return;
+    celebrated = true;
+    releaseMic();
+    flames.forEach((flame) => { if (flame) { flame.classList.remove('blowing'); flame.classList.add('off'); } });
+    intro.classList.add('celebrated');
+    instruction.textContent = 'أمنيتك بينك وبين النجوم يا أميرتي 💗';
+    status.textContent = 'يا سلام! طفاو الشمعات وراحت الكيكة للمفاجأة ✨';
+    micButton.textContent = '✨ الشموع طفاو يا أميرتي';
+    micButton.disabled = true;
+    // Fade the entire cake section, then start the normal site.
+    intro.classList.add('cake-section-fading');
+    if (referenceImage) referenceImage.classList.add('fading');
+    setTimeout(() => revealSite(false), 2500);
+  }
+
+  async function listenForBlow() {
+    if (celebrated) return;
+    if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia || !window.AudioContext && !window.webkitAudioContext) {
+      status.textContent = 'المتصفح ما يدعم المايكروفون هنا. تقدري تدخلي للرسالة بالزر البديل 💗';
+      enterButton.classList.add('visible');
+      return;
+    }
+    micButton.classList.add('listening');
+    micButton.textContent = '🎙️ اسمعك… انفخي على الشمعات الآن';
+    instruction.textContent = 'قرّبي فمك من الهاتف وانفخي نفخة لطيفة ومستمرة 🎂';
+    status.textContent = 'جاري معايرة صوت المكان… لحظة واحدة';
+    try {
+      stream = await navigator.mediaDevices.getUserMedia({ audio: { echoCancellation: true, noiseSuppression: true, autoGainControl: true } });
+      const Context = window.AudioContext || window.webkitAudioContext;
+      audioContext = new Context();
+      if (audioContext.state === 'suspended') await audioContext.resume();
+      const source = audioContext.createMediaStreamSource(stream);
+      const analyser = audioContext.createAnalyser();
+      analyser.fftSize = 512;
+      analyser.smoothingTimeConstant = .72;
+      source.connect(analyser);
+      const data = new Uint8Array(analyser.fftSize);
+      let baseline = 0.018;
+      let samples = 0;
+      let blowFrames = 0;
+      const startedAt = performance.now();
+      status.textContent = 'جاهزة… عايرة المايك، وبعدها انفخي 💗';
+      const detect = () => {
+        if (celebrated || !analyser) return;
+        analyser.getByteTimeDomainData(data);
+        let sum = 0;
+        for (let i = 0; i < data.length; i++) { const value = (data[i] - 128) / 128; sum += value * value; }
+        const rms = Math.sqrt(sum / data.length);
+        const level = Math.min(100, Math.round(rms * 650));
+        meter.style.width = Math.max(4, level) + '%';
+        const elapsed = performance.now() - startedAt;
+        if (elapsed < 900) { baseline = (baseline * samples + rms) / (samples + 1); samples++; }
+        else {
+          const threshold = Math.max(0.018, baseline * 1.22);
+          if (rms > threshold) { blowFrames++; flames.forEach((flame) => flame.classList.add('blowing')); }
+          else { blowFrames = Math.max(0, blowFrames - 1); flames.forEach((flame) => flame.classList.remove('blowing')); }
+          if (blowFrames > 3) { celebrate(); return; }
+        }
+        raf = requestAnimationFrame(detect);
+      };
+      raf = requestAnimationFrame(detect);
+    } catch (error) {
+      releaseMic();
+      micButton.classList.remove('listening');
+      micButton.textContent = '🎙️ حاولي مرة ثانية يا إكرامو';
+      status.textContent = 'ما قدرناش نفتحوا المايكروفون. اسمحي له من إعدادات المتصفح أو استعملي الزر البديل 💗';
+      enterButton.classList.add('visible');
+    }
+  }
+
+  micButton.addEventListener('click', listenForBlow);
+  enterButton.addEventListener('click', revealSite);
+})();
+</script>
+
+<script>
+(() => {
+  // Dense, responsive sticker collage that follows the complete message height.
+  // The text is rendered above the stickers, and the wider paper gutters keep letters readable.
+  const paper = document.querySelector('.paper');
+  const message = document.getElementById('letterText');
+  const layer = document.getElementById('messageStickerLayer');
+  const stickerFiles = [
+    'stickers/balloons-heart-bouquet.png', 'stickers/balloons-pink.png',
+    'stickers/botanical-1.png', 'stickers/botanical-2.png', 'stickers/botanical-3.png',
+    'stickers/botanical-4.png', 'stickers/botanical-5.png', 'stickers/botanical-6.png',
+    'stickers/botanical-7.png', 'stickers/botanical-8.png', 'stickers/botanical-9.png',
+    'stickers/botanical-10.png', 'stickers/botanical-11.png', 'stickers/bow-blush.png',
+    'stickers/bow-pink.png', 'stickers/cake-strawberries.png', 'stickers/champagne.png',
+    'stickers/flower-glitter.png', 'stickers/heart-gloss.png', 'stickers/heart-small.png',
+    'stickers/lily-pink.png', 'stickers/party-kitten.png', 'stickers/quote-darling-perfect.png',
+    'stickers/quote-heart.png', 'stickers/quote-moon-stars.png', 'stickers/quote-wood.png',
+    'stickers/quote-youre-mine.png', 'stickers/rose-bouquet-large.png',
+    'stickers/roses-bouquet.png', 'stickers/stars-metallic.png', 'stickers/teddy-bear.png',
+    'stickers/tulips.png'
+  ];
+  let layoutFrame = 0;
+  function layoutMessageStickers() {
+    cancelAnimationFrame(layoutFrame);
+    layoutFrame = requestAnimationFrame(() => {
+      if (!paper || !message || !layer) return;
+      layer.replaceChildren();
+      const messageHeight = Math.max(message.getBoundingClientRect().height, 1);
+      const mobile = window.matchMedia('(max-width: 650px)').matches;
+      // 44px on phones and 61px on wider screens gives a packed, overlapping sticker border.
+      const step = mobile ? 44 : 61;
+      const rows = Math.ceil(messageHeight / step);
+      const messageTop = message.offsetTop;
+      for (let i = 0; i < rows; i++) {
+        const centerY = messageTop + Math.min(messageHeight - 1, (i + 0.5) * step);
+        for (let sideIndex = 0; sideIndex < 2; sideIndex++) {
+          const img = document.createElement('img');
+          const sizeCycle = (i * 3 + sideIndex * 2) % 9;
+          const sizeClass = sizeCycle === 0 || sizeCycle === 5 ? 'large' :
+            (sizeCycle === 2 || sizeCycle === 7 ? 'small' : 'medium');
+          img.className = 'message-sticker ' + sizeClass + ' ' + (sideIndex === 0 ? 'left' : 'right');
+          img.src = stickerFiles[(i * 2 + sideIndex * 7) % stickerFiles.length];
+          img.alt = '';
+          img.draggable = false;
+          img.loading = 'eager';
+          img.style.top = Math.round(centerY - (mobile ? 23 : 30) + (sideIndex === 0 ? -7 : 7)) + 'px';
+          const rotation = ((i + sideIndex) % 2 === 0 ? -1 : 1) * (5 + (i % 5) * 2);
+          img.style.transform = 'rotate(' + rotation + 'deg)';
+          layer.appendChild(img);
+        }
+        // An extra mini sticker between pairs makes the edges feel like a packed scrapbook.
+        if (i % 2 === 0) {
+          const extra = document.createElement('img');
+          extra.className = 'message-sticker small ' + (i % 4 === 0 ? 'left' : 'right');
+          extra.src = stickerFiles[(i * 5 + 13) % stickerFiles.length];
+          extra.alt = '';
+          extra.draggable = false;
+          extra.loading = 'eager';
+          extra.style.top = Math.round(centerY + (mobile ? 18 : 24)) + 'px';
+          extra.style.opacity = '.96';
+          extra.style.transform = 'rotate(' + (i % 2 === 0 ? '-11deg' : '11deg') + ')';
+          layer.appendChild(extra);
+        }
+      }
+    });
+  }
+  layoutMessageStickers();
+  window.addEventListener('load', layoutMessageStickers);
+  window.addEventListener('resize', layoutMessageStickers, { passive: true });
+  if ('ResizeObserver' in window && message) new ResizeObserver(layoutMessageStickers).observe(message);
+})();
+</script>
+<script>
+(() => {
+  const audio = document.getElementById('birthdaySong');
+  const startButton = document.getElementById('startAlbumButton');
+  const status = document.getElementById('musicStatus');
+  const album = document.getElementById('memoryAlbum');
+  const gate = document.getElementById('albumGate');
+  const stack = document.getElementById('memoriesStack');
+
+  // Add/remove these entries to customize the album. Place image files inside /photos.
+  // Each caption is displayed directly under its own photo.
+  // ترتيب الألبوم: صورة ثم فيديو. ضعي الصور في /photos والفيديوهات في /videos.
+  // يمكنك تعديل src وcaption وalt لكل ذكرى دون لمس التصميم.
+  const memories = [
+    { type: 'photo', src: 'photos/memory-01.jpg', caption: 'ولله ني شافي كي لقينا الريل و رحنا نخدموهاا و ولله لدك متفكر لحكاية كي كنت نحكيلك فيها باه ديريهاا واعع ولله العظيم غير من افضل الصور ذي ثانكيوو لانو كنتي معاياا حبي فذي اللحظة الشابةة 💗', alt: 'الصورة 1' },
+    { type: 'video', src: 'videos/video-01.mp4', caption: 'احم احم احمم😭 ذا الفيديو لقيتو ريل تان و سرقتوو طوللللللل و حطيت فيه تصاور لي كنا مطقمين بيهم بلغلطة ياك تشفاي بلي تصويرة تع طفل حوست عليها زعما على تصويرة تشبع لتعك و كان فيها خلفية ايا انا لونت الخلفية بلبيض باه ندير ماتشي معاك 😭😭😭🤣 🎬', alt: 'الفيديو 1' },
+    { type: 'photo', src: 'photos/memory-02.jpg', caption: 'اذا مش خاينتنييي ذاكرةةةة ذي ثاني ولا اول نوت ماتشيييي  حبييي ولله ما تأمنيش شحال فرحت كي درناها اول مرة ولله كشغل طفل صغير ولله العظيم و للدك فرحان بيهااا😭😭😭 🎀', alt: 'الصورة 2' },
+    { type: 'video', src: 'videos/video-02.mp4', caption: 'افضل ثنائي صدقيني كون ندخلووو تع المواهب نتحاوزو بطوماطيشش🤣🤣🤣 ولله نعشقك حبي ولله العظيمم غير ذي من افضل الحاجات لي درناهمم ولله😭😭 🎬', alt: 'الفيديو 2' },
+    { type: 'photo', src: 'photos/memory-03.jpg', caption: 'ذي ما نقولش عليها تصويرة خدمناها بذكاء اصطناعي برك حبي بل نقول عليها تجسيد لمستقبلنا مع بعضض يا عمري لانو ولله ني نشوف بلي راح نولو اقرب بلبزاف من حتى التصاورر  هاذووو عمرييي ولله نعشقك حبي ولله نتي كلشييي\n 🌷', alt: 'الصورة 3' },
+    { type: 'video', src: 'videos/video-03.mp4', caption: 'اول فيديو خدمتوو ليككك واععععععععععععععععع😭😭😭 عارفة بلي كي خدمتو و جيت نبعتهولك ولله نت حاشم منك اكرامو \nولله العظيم كنت حاشمم طولل و نسخة رمضان تبحرت واقيلللمي ولله من بساطتتهم ولله بزاف شابين 🌟🎬', alt: 'الفيديو 3' },
+    { type: 'photo', src: 'photos/memory-04.jpg', caption: 'ذي لو نخمو فيها حياتنا حرفيااا نهار نشطحو فرحانين نهار نتخاصمو زعفانين 😭😭😭مي دايمننن نرجعوووو نشطحوو فرحانيننحبيي و تاننن ما دخنيششش كي نتزوجو نتعلمو الشطحة ذيكك بلا سبةة نديروها لازممم 🧸', alt: 'الصورة 4' },
+    { type: 'video', src: 'videos/video-04.mp4', caption: 'ايييييييي علاه ني نحس روحي كيوت بزاف و انا اصلا علاه درت ذي الغنية ولله العظيم غير ني حاس روحي كيوتتتتتت طوللللللللللللل علاااااااااههه واعععععععععععع😭😭😭😭😭😭علاهه بعتوووووو ولله حشمت مشكل كل ما نشوفو نتفكر بلي فري يحشمممممممم 🎬', alt: 'الفيديو 4' },
+    { type: 'photo', src: 'photos/memory-05.jpg', caption: 'ذي حرفيا حرفيا حرفياااااااا اكثر تصويرة عشوائية جات فراصي ولله العظيم خزرت فصباعي فنفس الثانية قتلك ابعتيلي تصويرة لصباعك ايا بعتيلي و بعتت و رحت رسمتهم حرفياا من دون سابق انذار حبي طول ولله رحت و ذا لي يخليها هايلةةة ولله  ✨', alt: 'الصورة 5' },
+    { type: 'video', src: 'videos/video-05.mp4', caption: 'تأمني بلي ولله شفتي اللقطة الاولى تع زوج يخزرو في بعضاهم اقسم بلله غير كنت نحوس ايا عجبتني درتها شفتي بعد ما كملت الفيديو و كلشي و بعتولكككك و منااااااا ستوعبت بلي شخصيات راهم يخزرو فبعضاهم كيما العنوان تع كيفاه تشوفني و كيفاه نشوفهااا ايا صدقتليي😭 🎬', alt: 'الفيديو 5' },
+    { type: 'photo', src: 'photos/memory-06.jpg', caption: 'ولله سبحان الله كيما كنت نشوفك ذاك الوقت راكي دك ولله راكي غزالتي و راكي اميرتي و تانن استاذتك تع ابتدائييي جابتلكك الكادررر لي درتككك بيههه و راكي كلشي فحياتي ولله خليتي حياتي وردية برغم من العنف لي راني عايش فيه ولله العظيم نتي كلشي ليا اميرتيييييي ولله العظيم نعشقك  💞', alt: 'الصورة 6' },
+    { type: 'video', src: 'videos/video-06.mp4', caption: ' الفيديو ذاا عارفة ذي اول مرة ندير تعدي على تصويرةة و كلشيي و نشفى نتي مدحتيني من كثر ما مدحتيني بزاف اول مرة فحياتي ندير روحي فوتو بروفيل اول مرةة فحياتيي كاملة اقسم بلله كانت ذيك اول مرة نحط كور تاعي بروفيل فتاريخخخ ملي ولدتتتت برك لانو نتي قلتيلي شابة و قلتيلي درها و انا كنت ميت عليك كنت مطيع😭😭😭🎬', alt: 'الفيديو 6' },
+    { type: 'video', src: 'videos/video-07.mp4', caption: '   اوفففف اوففف اوفففففففف اقسم بلله غير فخمين هايلين مزين مزهورين  شابين تان هايلين تان و مزين و مزهورين و شابين و مزين و كلشييي مليح فتاريخخ افخمم ترند خدمنااااهه حرفياااااا اقسم بلله العظيم غير افخممم ترندددد خدمناهه فلعالممممممممممممممممممممممممممممممممممممممم عمريييييييييييييييييييييييييينحبك اقسم بلله  🎬', alt: 'الفيديو 7' },
+    { type: 'video', src: 'videos/video-08.mp4', caption: ' 🤣🤣🤣🤣ذا تاني خدمتو على غفلة و فاجأتك بيه مور ما بعتي لفوكال ذااك يا عمري اقسم بلله غير نتي كيوتة طوللل ولله العظيم غير كيوتة طووووووووولللل واععععععععععععععععع حاب ناكلككككككككككككك🎬', alt: 'الفيديو 8' },
+    { type: 'video', src: 'videos/video-09.mp4', caption: 'افضل حاجة درتها فحياتي اقسم بلله بلا منازع مكاش منازع لذا الشي ولله تخطيت حدودي مليار ولله العظيم على جالك ني غير نتخطى حدودي و شوفيني دك وين وصلت فتخطي الحدود نخدم ليزابليكاسو كاملين اياياي ولله العظيم نعشقك حبي ولله نموت عليككك عشنا مع بعض بزاف حاجات شابين من تلاقينا هذا العام عمري و العام لجاي نعيشو لحظات بزاف بزاف بزاف بمراحل ولله حبي  🎬', alt: 'الفيديو 9' }
+  ];
+  const stickerChoices = [
+    'stickers/bow-pink.png', 'stickers/heart-gloss.png', 'stickers/teddy-bear.png',
+    'stickers/balloons-pink.png', 'stickers/roses-bouquet.png', 'stickers/tulips.png',
+    'stickers/flower-glitter.png', 'stickers/party-kitten.png', 'stickers/heart-small.png',
+    'stickers/lily-pink.png', 'stickers/stars-metallic.png', 'stickers/bow-blush.png',
+    'stickers/cake-strawberries.png', 'stickers/rose-bouquet-large.png',
+    'stickers/balloons-heart-bouquet.png'
+  ];
+  const placeholder = 'photos/add-your-photo.svg';
+
+  // أضيفي أو عدّلي التسجيلات من هنا. ضعي الملفات داخل مجلد /audio.
+  // مثال: audio/song-01.mp3 مع الاسم والوصف الذي سيظهران تحت المشغّل.
+  const recordings = [
+    { src: 'audio/song-01.mp3', name: 'killshot 🎶', description: 'ولله يا حبي ولله كيل شوت من اكثر ااغاني لي ستمتعت بيهم و انا نحفظظ فيهااا وللهذوقكك هايللللللللل و ني خايف نكون عطبتها بصح ان شاء الله تعجبكككك مواححح' },
+    { src: 'audio/song-02.mp3', name: 'love me not 💗', description: 'ولله حبي نعشقك و نموت عليككك و التسجيل ذا عطبتها فيه ملياار و كنت نغلي من الحشمة و انا ندير فيه راح تضحكي عليا ولله😭😭' }
+  ];
+  const recordRoom = document.getElementById('recordRoom');
+  const recordList = document.getElementById('recordList');
+  const recordRoomButton = document.getElementById('recordRoomButton');
+
+  recordings.forEach((recording, index) => {
+    const card = document.createElement('article');
+    card.className = 'record-card';
+    card.innerHTML = `
+      <p class="record-number">التسجيل ${index + 1}</p>
+      <h3 class="record-name"></h3>
+      <p class="record-description"></p>
+      <audio class="record-audio" controls preload="metadata" src="${recording.src}"></audio>`;
+    card.querySelector('.record-name').textContent = recording.name;
+    card.querySelector('.record-description').textContent = recording.description;
+    recordList.appendChild(card);
+  });
+
+  document.querySelector('.memories-stack').addEventListener('play', (event) => {
+    document.querySelectorAll('.memory-video').forEach((player) => {
+      if (player !== event.target) player.pause();
+    });
+  }, true);
+
+  recordList.addEventListener('play', (event) => {
+    document.querySelectorAll('.record-audio').forEach((player) => {
+      if (player !== event.target) player.pause();
+    });
+  }, true);
+
+  // أوقفي أغنية الخلفية أثناء الفيديو أو الفويس، مع حماية تبديل المقاطع من أي تداخل.
+  let backgroundWasPlaying = false;
+  let activeMemoryMedia = null;
+  let resumeTimer = 0;
+  const memoryMediaSelector = '.memory-video, .record-audio';
+
+  function resumeBackgroundIfNeeded() {
+    if (resumeTimer) clearTimeout(resumeTimer);
+    resumeTimer = setTimeout(() => {
+      resumeTimer = 0;
+      if (!activeMemoryMedia && backgroundWasPlaying && audio.paused) {
+        audio.play().catch(() => {});
+        backgroundWasPlaying = false;
+      }
+    }, 80);
+  }
+
+  document.addEventListener('play', (event) => {
+    const media = event.target;
+    if (!media.matches || !media.matches(memoryMediaSelector)) return;
+    if (resumeTimer) { clearTimeout(resumeTimer); resumeTimer = 0; }
+    document.querySelectorAll(memoryMediaSelector).forEach((player) => {
+      if (player !== media && !player.paused) player.pause();
+    });
+    activeMemoryMedia = media;
+    backgroundWasPlaying = backgroundWasPlaying || (!audio.paused && !audio.ended);
+    if (!audio.paused) audio.pause();
+  }, true);
+
+  document.addEventListener('ended', (event) => {
+    const media = event.target;
+    if (!media.matches || !media.matches(memoryMediaSelector)) return;
+    if (activeMemoryMedia !== media) return;
+    activeMemoryMedia = null;
+    resumeBackgroundIfNeeded();
+  }, true);
+
+  document.addEventListener('pause', (event) => {
+    const media = event.target;
+    if (!media.matches || !media.matches(memoryMediaSelector) || media.ended) return;
+    if (activeMemoryMedia !== media) return;
+    activeMemoryMedia = null;
+    resumeBackgroundIfNeeded();
+  }, true);
+
+  recordRoomButton.addEventListener('click', () => {
+    recordRoom.hidden = false;
+    recordRoom.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+
+  const finalPhotoReveal = document.getElementById('finalPhotoReveal');
+  finalPhotoReveal.addEventListener('click', () => {
+    finalPhotoReveal.classList.add('revealed');
+    finalPhotoReveal.setAttribute('aria-label', 'الصورة ظاهرة بوضوح');
+    finalPhotoReveal.querySelector('.final-photo-hint').textContent = 'ها هي الرسمة تاعك يا إكرامو 💗';
+  });
+
+  function addPhotoCard(memory, index) {
+    const card = document.createElement('article');
+    card.className = 'memory-card';
+    card.setAttribute('aria-label', 'صورة وذكرى ' + (index + 1));
+
+    const frame = document.createElement('div');
+    frame.className = 'memory-photo-frame';
+    let media;
+    if (memory.type === 'video') {
+      media = document.createElement('video');
+      media.className = 'memory-video';
+      media.controls = true;
+      media.preload = 'metadata';
+      media.playsInline = true;
+      media.setAttribute('aria-label', memory.alt || ('فيديو ' + (index + 1)));
+      media.src = memory.src;
+      media.addEventListener('error', () => {
+        media.setAttribute('title', 'تأكدي من وجود الفيديو داخل مجلد videos وبالاسم الصحيح');
+      });
+    } else {
+      media = document.createElement('img');
+      media.className = 'memory-photo';
+      media.src = memory.src;
+      media.alt = memory.alt || ('ذكرى ' + (index + 1));
+      media.loading = 'lazy';
+      media.decoding = 'async';
+      media.draggable = false;
+      media.addEventListener('error', () => {
+        if (media.dataset.fallbackApplied) return;
+        media.dataset.fallbackApplied = 'yes';
+        media.src = placeholder;
+        media.classList.add('is-placeholder');
+        media.alt = 'أضيفي صورتك هنا';
+      });
+    }
+    frame.appendChild(media);
+    card.appendChild(frame);
+
+    const caption = document.createElement('p');
+    caption.className = 'memory-caption';
+    caption.textContent = memory.caption || '';
+    card.appendChild(caption);
+
+    const positions = ['top-left', 'top-right', 'bottom-left', 'bottom-right'];
+    const decoCount = 2 + (index % 2);
+    for (let d = 0; d < decoCount; d++) {
+      const decoration = document.createElement('img');
+      decoration.className = 'memory-sticker ' + positions[(index + d) % positions.length];
+      decoration.src = stickerChoices[(index * 3 + d * 5) % stickerChoices.length];
+      decoration.alt = '';
+      decoration.loading = 'lazy';
+      decoration.draggable = false;
+      decoration.setAttribute('aria-hidden', 'true');
+      card.appendChild(decoration);
+    }
+    stack.appendChild(card);
+  }
+  memories.forEach(addPhotoCard);
+
+  let started = false;
+  let quietAutoplayStarted = false;
+
+  function stopQuietRetryListeners() {
+    ['pointerdown', 'touchstart', 'wheel', 'scroll', 'keydown'].forEach((type) =>
+      window.removeEventListener(type, retryQuietAudioOnInteraction, { passive: true })
+    );
+  }
+
+  function tryQuietAutoplay() {
+    if (quietAutoplayStarted || started || !audio || !audio.paused) return;
+    audio.volume = 0.06;
+    audio.loop = true;
+    try {
+      const playPromise = audio.play();
+      if (playPromise && typeof playPromise.then === 'function') {
+        playPromise.then(() => {
+          quietAutoplayStarted = true;
+          stopQuietRetryListeners();
+        }).catch(() => {
+          // The browser may require a real gesture; the listeners will retry later.
+        });
+      }
+    } catch (error) {
+      // Keep the page usable when audio autoplay is unavailable.
+    }
+  }
+
+  function retryQuietAudioOnInteraction(event) {
+    if (event.target === startButton || started) return;
+    tryQuietAutoplay();
+  }
+
+  // Best-effort autoplay: browsers may require a user gesture, especially on phones.
+  tryQuietAutoplay();
+  ['pointerdown', 'touchstart', 'wheel', 'scroll', 'keydown'].forEach((type) =>
+    window.addEventListener(type, retryQuietAudioOnInteraction, { passive: true })
+  );
+
+  startButton.addEventListener('click', async () => {
+    if (started) {
+      album.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      return;
+    }
+    started = true;
+    startButton.textContent = '🎶 الأغنية شغّالة… كمّلي نزول يا عمري 💗';
+    gate.classList.add('album-gate-started');
+    album.hidden = false;
+    status.textContent = 'لحظة ونفتحلك ألبوم الذكريات… 💞';
+
+    // This is the intentional music control: restart from zero at a clearer volume.
+    audio.volume = 0.36;
+    audio.loop = true;
+    audio.currentTime = 0;
+    let playPromise;
+    try {
+      playPromise = audio.play();
+    } catch (error) {
+      playPromise = Promise.reject(error);
+    }
+
+    requestAnimationFrame(() => {
+      album.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+
+    try {
+      if (playPromise && typeof playPromise.then === 'function') await playPromise;
+      status.textContent = 'الأغنية راهي تخدم 💗 كمّلي شوفي الذكريات براحتك';
+    } catch (error) {
+      status.textContent = 'ما قدرناش نشغلو الأغنية. تأكدي من وجود audio/ikramo-birthday.mp3، والألبوم راه مفتوح 💗';
+      startButton.textContent = '🎵 أعيدي محاولة تشغيل الأغنية 💗';
+      started = false;
+    }
+  });
+
+  audio.addEventListener('error', () => {
+    status.textContent = 'ما لقيناش ملف الأغنية. حطيه داخل audio باسم ikramo-birthday.mp3 💗';
+  });
+})();
+</script>
+
+</body>
+</html>

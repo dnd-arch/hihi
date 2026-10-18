@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="480" viewBox="0 0 720 480">
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ffe6f0"/><stop offset="1" stop-color="#fff8fb"/></linearGradient></defs>
+<rect width="720" height="480" rx="20" fill="url(#bg)"/>
+<rect x="22" y="22" width="676" height="436" rx="14" fill="none" stroke="#e9a5bf" stroke-width="3" stroke-dasharray="10 9"/>
+<g transform="translate(300 142)" fill="none" stroke="#d75c91" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"><rect x="-70" y="-38" width="140" height="106" rx="18"/><path d="M-38 -38 l15 -22 h46 l15 22"/><circle cx="0" cy="15" r="29"/><circle cx="0" cy="15" r="14"/></g>
+<g fill="#ed73a4" font-family="Tahoma,Arial,sans-serif" text-anchor="middle"><text x="360" y="310" font-size="34" font-weight="700">حطي صورتك هنا 🎀</text><text x="360" y="355" font-size="21">photos/memory-01.jpg</text></g>
+<g fill="#f2a6c2"><path d="M112 104 C83 74 40 106 112 164 C184 106 141 74 112 104Z"/><path d="M605 360 C582 336 548 361 605 408 C662 361 628 336 605 360Z"/></g>
+</svg>
