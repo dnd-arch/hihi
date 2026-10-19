@@ -257,42 +257,9 @@ body.cake-locked main#siteContent,body.cake-locked #albumGate,body.cake-locked #
 </head>
 <body>
 
-<section class="cake-intro reference-mode" id="cakeIntro" aria-label="مفاجأة عيد ميلاد إكرامو">
-  <div class="cake-intro-content">
-    <p class="cake-kicker">A ROYAL BIRTHDAY SURPRISE</p>
-    <h1 class="cake-title">عيد ميلاد سعيد إكرامو 🎀</h1>
-    <p class="cake-wish">تمنييي اميةةةة عمرييي 🎂💗</p>
-    <div class="cake-stage" aria-label="كيكة إكرامو الوردية مع شموع 19 مطفأة">
-      <img class="cake-reference-image" src="cake-ikramo-off.png" alt="كيكة وردية فاخرة لإكرامو مع شموع الرقم 19 مطفأة" fetchpriority="high">
-      <span class="image-flame one" id="imageFlameOne" aria-label="لهب الشمعة الأولى"></span>
-      <span class="image-flame nine" id="imageFlameNine" aria-label="لهب الشمعة الثانية"></span>
-      <div class="cake-glow" aria-hidden="true"></div>
-      <div class="cake-sparkles" aria-hidden="true"></div>
-      <div class="cake">
-        <div class="tier tier-bottom"><span class="frosting"></span><span class="pearls"></span></div>
-        <div class="tier tier-middle"><span class="frosting"></span><span class="pearls"></span></div>
-        <div class="tier tier-top"><span class="frosting"></span><span class="pearls"></span></div>
-        <span class="cake-flower flower-a" aria-hidden="true"></span><span class="cake-flower flower-b" aria-hidden="true"></span>
-        <span class="cake-bow" aria-hidden="true">🎀</span><span class="cake-name">إكرامو</span>
-        <svg class="candle-numbers" viewBox="0 0 180 100" role="img" aria-label="شمعتا الرقم 19">
-          <path class="candle-wax" d="M43 82V21L29 31"/><path class="candle-shine" d="M43 76V27"/>
-          <path class="candle-wax" d="M105 28C105 12 143 11 143 30C143 44 127 47 111 45V80"/><path class="candle-shine" d="M111 28C113 20 127 19 134 24"/>
-        </svg>
-        <span class="flame flame-one" id="flameOne" aria-hidden="true"></span><span class="flame flame-nine" id="flameNine" aria-hidden="true"></span>
-      </div>
-      <div class="cake-stand" aria-hidden="true"></div>
-    </div>
-    <div class="cake-controls">
-      <p class="blow-instruction" id="blowInstruction">انفخي مليحح على الشموعع عمريي 🎀</p>
-      <button class="mic-button" id="micButton" type="button">اوففف اوففف باه تطفىى 🎂💗</button>
-      <div class="meter" aria-hidden="true"><span class="meter-bar" id="meterBar"></span></div>
-      <p class="cake-status" id="cakeStatus" role="status" aria-live="polite">نحبك ولله العظيم💗</p>
-      <button class="enter-site-button" id="enterSiteButton" type="button">دخلي للرسالة بدون المايك 💗</button>
-    </div>
-  </div>
-</section>
 
-<main class="page" id="siteContent" hidden>
+
+<main class="page" id="siteContent">
 
   <section class="relationship-counter" aria-label="عداد مدة العلاقة">
     <h2 class="relationship-title">حكايتنا عمريي  💗</h2>
@@ -362,7 +329,7 @@ body.cake-locked main#siteContent,body.cake-locked #albumGate,body.cake-locked #
  </section>
 </main>
 
-<section class="album-gate" id="albumGate" hidden aria-label="الانتقال إلى ألبوم الذكريات">
+<section class="album-gate" id="albumGate" aria-label="الانتقال إلى ألبوم الذكريات">
   <p class="album-gate-note">كي تكملي الرسالة، عندك باقي ذكرياتنا يا إكرامو 💗</p>
   <button class="album-start-button" id="startAlbumButton" type="button">
     🎵 كمّلي رحلتنا يا إكرامو 🎀
@@ -488,119 +455,7 @@ body.cake-locked main#siteContent,body.cake-locked #albumGate,body.cake-locked #
 })();
 </script>
 
-<script>
-(() => {
-  document.documentElement.classList.add('cake-locked');
-  document.body.classList.add('cake-locked');
-  const intro = document.getElementById('cakeIntro');
-  const siteContent = document.getElementById('siteContent');
-  const albumGate = document.getElementById('albumGate');
-  const micButton = document.getElementById('micButton');
-  const enterButton = document.getElementById('enterSiteButton');
-  const status = document.getElementById('cakeStatus');
-  const instruction = document.getElementById('blowInstruction');
-  const meter = document.getElementById('meterBar');
-  const flames = [document.getElementById('flameOne'), document.getElementById('flameNine'), document.getElementById('imageFlameOne'), document.getElementById('imageFlameNine')];
-  const referenceImage = document.querySelector('.cake-reference-image');
-  let stream = null;
-  let audioContext = null;
-  let raf = 0;
-  let celebrated = false;
 
-  function revealSite(keepCakeVisible = false) {
-    if (!keepCakeVisible) intro.hidden = true;
-    document.documentElement.classList.remove('cake-locked');
-    document.body.classList.remove('cake-locked');
-    siteContent.hidden = false;
-    albumGate.hidden = false;
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
-
-  function releaseMic() {
-    if (raf) cancelAnimationFrame(raf);
-    if (stream) stream.getTracks().forEach((track) => track.stop());
-    stream = null;
-    if (audioContext && audioContext.state !== 'closed') audioContext.close().catch(() => {});
-    audioContext = null;
-    meter.style.width = '4%';
-    micButton.classList.remove('listening');
-  }
-
-  function celebrate() {
-    if (celebrated) return;
-    celebrated = true;
-    releaseMic();
-    flames.forEach((flame) => { if (flame) { flame.classList.remove('blowing'); flame.classList.add('off'); } });
-    intro.classList.add('celebrated');
-    instruction.textContent = 'أمنيتك بينك وبين النجوم يا أميرتي 💗';
-    status.textContent = 'يا سلام! طفاو الشمعات وراحت الكيكة للمفاجأة ✨';
-    micButton.textContent = '✨ الشموع طفاو يا أميرتي';
-    micButton.disabled = true;
-    // Fade the entire cake section, then start the normal site.
-    intro.classList.add('cake-section-fading');
-    if (referenceImage) referenceImage.classList.add('fading');
-    setTimeout(() => revealSite(false), 2500);
-  }
-
-  async function listenForBlow() {
-    if (celebrated) return;
-    if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia || !window.AudioContext && !window.webkitAudioContext) {
-      status.textContent = 'المتصفح ما يدعم المايكروفون هنا. تقدري تدخلي للرسالة بالزر البديل 💗';
-      enterButton.classList.add('visible');
-      return;
-    }
-    micButton.classList.add('listening');
-    micButton.textContent = '🎙️ اسمعك… انفخي على الشمعات الآن';
-    instruction.textContent = 'قرّبي فمك من الهاتف وانفخي نفخة لطيفة ومستمرة 🎂';
-    status.textContent = 'جاري معايرة صوت المكان… لحظة واحدة';
-    try {
-      stream = await navigator.mediaDevices.getUserMedia({ audio: { echoCancellation: true, noiseSuppression: true, autoGainControl: true } });
-      const Context = window.AudioContext || window.webkitAudioContext;
-      audioContext = new Context();
-      if (audioContext.state === 'suspended') await audioContext.resume();
-      const source = audioContext.createMediaStreamSource(stream);
-      const analyser = audioContext.createAnalyser();
-      analyser.fftSize = 512;
-      analyser.smoothingTimeConstant = .72;
-      source.connect(analyser);
-      const data = new Uint8Array(analyser.fftSize);
-      let baseline = 0.018;
-      let samples = 0;
-      let blowFrames = 0;
-      const startedAt = performance.now();
-      status.textContent = 'جاهزة… عايرة المايك، وبعدها انفخي 💗';
-      const detect = () => {
-        if (celebrated || !analyser) return;
-        analyser.getByteTimeDomainData(data);
-        let sum = 0;
-        for (let i = 0; i < data.length; i++) { const value = (data[i] - 128) / 128; sum += value * value; }
-        const rms = Math.sqrt(sum / data.length);
-        const level = Math.min(100, Math.round(rms * 650));
-        meter.style.width = Math.max(4, level) + '%';
-        const elapsed = performance.now() - startedAt;
-        if (elapsed < 900) { baseline = (baseline * samples + rms) / (samples + 1); samples++; }
-        else {
-          const threshold = Math.max(0.018, baseline * 1.22);
-          if (rms > threshold) { blowFrames++; flames.forEach((flame) => flame.classList.add('blowing')); }
-          else { blowFrames = Math.max(0, blowFrames - 1); flames.forEach((flame) => flame.classList.remove('blowing')); }
-          if (blowFrames > 3) { celebrate(); return; }
-        }
-        raf = requestAnimationFrame(detect);
-      };
-      raf = requestAnimationFrame(detect);
-    } catch (error) {
-      releaseMic();
-      micButton.classList.remove('listening');
-      micButton.textContent = '🎙️ حاولي مرة ثانية يا إكرامو';
-      status.textContent = 'ما قدرناش نفتحوا المايكروفون. اسمحي له من إعدادات المتصفح أو استعملي الزر البديل 💗';
-      enterButton.classList.add('visible');
-    }
-  }
-
-  micButton.addEventListener('click', listenForBlow);
-  enterButton.addEventListener('click', revealSite);
-})();
-</script>
 
 <script>
 (() => {
